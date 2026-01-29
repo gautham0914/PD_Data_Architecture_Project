@@ -1,4 +1,4 @@
-# PD Take-home: Data Architecture + Python ETL + AI-ready
+# PD_Data_Architecture_Project: Data Architecture + Python ETL + AI-ready
 
 ## Architecture
 - Postgres (Neon) with application schema `pd`
