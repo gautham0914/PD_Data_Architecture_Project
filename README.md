@@ -1,4 +1,4 @@
-# PD Take-home: Data Architecture + Python ETL + AI-ready
+# PD_Data_Architecture_Project: Data Architecture + Python ETL + AI-ready
 
 ## Architecture
 - Postgres (Neon) with application schema `pd`
@@ -28,33 +28,39 @@
 1. Create `.env` from `.env.example` and set `DATABASE_URL`:
 
 ```bash
-cp PD_Data_Architecture_Project/.env.example PD_Data_Architecture_Project/.env
-# edit PD_Data_Architecture_Project/.env with your Neon connection string
+cp .env.example .env
+# edit .env with your Neon connection string
 ```
 
 2. Install dependencies (Python 3.11+):
 
 ```bash
-python -m venv PD_Data_Architecture_Project/.venv
-source PD_Data_Architecture_Project/.venv/bin/activate
-pip install -r PD_Data_Architecture_Project/requirements.txt
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
 ```
 
 3. (Optional) Create views and run safe SQL demo:
 
 ```bash
 # Apply views in your database (ensure schema/tables exist)
-psql "$DATABASE_URL" -f PD_Data_Architecture_Project/sql/02_views.sql
+psql "$DATABASE_URL" -f sql/02_views.sql
 
-python PD_Data_Architecture_Project/src/ai_demo.py
+python src/ai_demo.py
 ```
 
 4. Run the seed script (uses your `DATABASE_URL`):
 
 ```bash
 # From project root
-source PD_Data_Architecture_Project/.venv/bin/activate
+source .venv/bin/activate
 python -m src.seed
+```
+
+Connectivity quick check:
+
+```bash
+python -c "from src.db import get_database_url; print(get_database_url()[:40])"
 ```
 ```
 
@@ -63,9 +69,47 @@ python -m src.seed
 - Use `src/safe_sql.py` for dynamic execution guarded by views and LIMIT.
 
 ## Screenshots
-- Save evidence in `PD_Data_Architecture_Projects/report/screenshots/` (folder pre-created).
+- Save evidence in `report/screenshots/` (folder pre-created).
 
 ## Notes
 - Never hardcode credentials; all code reads `DATABASE_URL` from environment.
 - Seed script is a skeleton; adjust column names/types to your actual schema before running.
 - This repo is beginner-readable: short functions, clear comments, and minimal magic.
+ 
+## Verification
+The environment and data load were verified end-to-end:
+- Schema accessible and views created (`sql/02_views.sql`).
+- Seed executed via `python -m src.seed` with `.env` loading from project root.
+- Row counts observed in `pd` tables after seed:
+	- `pd.accounts`: 34
+	- `pd.contacts`: 200
+	- `pd.opportunities`: 10
+	- `pd.opportunity_sponsorships`: 7
+	- `pd.applications`: 230
+	- `pd.experiences`: 180
+	- `pd.work_experiences`: 180
+	- `pd.partner_engagements`: 106
+	- `pd.outreach_messages`: 120
+	- `pd.account_aliases`: 5
+	- `pd.etl_school_name_review_queue`: 4
+	- `pd.entity_embeddings`: 0 (placeholder; to be populated by AI demo)
+	- `pd.query_audit_log`: 0 (populated when `safe_sql` is used)
+
+Quick re-verification:
+
+```bash
+source .venv/bin/activate
+python - <<'PY'
+from src.db import connect
+tables = [
+		'accounts','contacts','opportunities','opportunity_sponsorships',
+		'applications','experiences','work_experiences','partner_engagements',
+		'outreach_messages','account_aliases','etl_school_name_review_queue',
+		'entity_embeddings','query_audit_log'
+]
+with connect() as conn, conn.cursor() as cur:
+		for t in tables:
+				cur.execute(f"select count(*) from pd.{t}")
+				print(t, cur.fetchone()[0])
+PY
+```

@@ -8,16 +8,21 @@ from __future__ import annotations
 
 import os
 from typing import Iterable, Optional
+from pathlib import Path
 
 from dotenv import load_dotenv
 import psycopg
+
 from psycopg import Connection
 
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+# Load .env from project root so it works regardless of CWD
+load_dotenv(PROJECT_ROOT / ".env")
 
 def _load_env() -> None:
     """Load environment variables from .env once."""
     # Safe to call multiple times; load_dotenv caches.
-    load_dotenv(override=False)
+    load_dotenv(PROJECT_ROOT / ".env", override=False)
 
 
 def get_database_url() -> str:
