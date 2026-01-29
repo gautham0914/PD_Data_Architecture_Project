@@ -28,33 +28,33 @@
 1. Create `.env` from `.env.example` and set `DATABASE_URL`:
 
 ```bash
-cp pd-takehome/.env.example pd-takehome/.env
-# edit pd-takehome/.env with your Neon connection string
+cp .env.example .env
+# edit .env with your Neon connection string
 ```
 
 2. Install dependencies (Python 3.11+):
 
 ```bash
-python -m venv pd-takehome/.venv
-source pd-takehome/.venv/bin/activate
-pip install -r pd-takehome/requirements.txt
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
 ```
 
 3. (Optional) Create views and run safe SQL demo:
 
 ```bash
 # Apply views in your database (ensure schema/tables exist)
-psql "$DATABASE_URL" -f pd-takehome/sql/02_views.sql
+psql "$DATABASE_URL" -f sql/02_views.sql
 
-python pd-takehome/src/ai_demo.py
+python src/ai_demo.py
 ```
 
 ## Queries
-- See `pd-takehome/sql/03_questions.sql` for the 5 required questions.
+- See `sql/03_questions.sql` for the 5 required questions.
 - Use `src/safe_sql.py` for dynamic execution guarded by views and LIMIT.
 
 ## Screenshots
-- Save evidence in `pd-takehome/report/screenshots/` (folder pre-created).
+- Save evidence in `report/screenshots/` (folder pre-created).
 
 ## Notes
 - Never hardcode credentials; all code reads `DATABASE_URL` from environment.
