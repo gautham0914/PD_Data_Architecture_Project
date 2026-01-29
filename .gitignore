@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Environments
+.env
+.venv/
+venv/
+
+# macOS / IDE
+.DS_Store
+.ipynb_checkpoints/
+.pytest_cache/
+
+# Reports
+pd-takehome/report/screenshots/

@@ -1,0 +1,4 @@
+psycopg[binary]>=3.1
+python-dotenv>=1.0
+faker>=18.0
+rapidfuzz>=3.0
