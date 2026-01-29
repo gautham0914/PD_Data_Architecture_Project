@@ -1,4 +1,4 @@
-# PD_Data_Architecture_Project: Data Architecture + Python ETL + AI-ready
+# PD Take-home: Data Architecture + Python ETL + AI-ready
 
 ## Architecture
 - Postgres (Neon) with application schema `pd`
@@ -28,33 +28,42 @@
 1. Create `.env` from `.env.example` and set `DATABASE_URL`:
 
 ```bash
-cp .env.example .env
-# edit .env with your Neon connection string
+cp PD_Data_Architecture_Project/.env.example PD_Data_Architecture_Project/.env
+# edit PD_Data_Architecture_Project/.env with your Neon connection string
 ```
 
 2. Install dependencies (Python 3.11+):
 
 ```bash
-python -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
+python -m venv PD_Data_Architecture_Project/.venv
+source PD_Data_Architecture_Project/.venv/bin/activate
+pip install -r PD_Data_Architecture_Project/requirements.txt
 ```
 
 3. (Optional) Create views and run safe SQL demo:
 
 ```bash
 # Apply views in your database (ensure schema/tables exist)
-psql "$DATABASE_URL" -f sql/02_views.sql
+psql "$DATABASE_URL" -f PD_Data_Architecture_Project/sql/02_views.sql
 
-python src/ai_demo.py
+python PD_Data_Architecture_Project/src/ai_demo.py
+```
+
+4. Run the seed script (uses your `DATABASE_URL`):
+
+```bash
+# From project root
+source PD_Data_Architecture_Project/.venv/bin/activate
+python -m src.seed
+```
 ```
 
 ## Queries
-- See `sql/03_questions.sql` for the 5 required questions.
+- See `PD_Data_Architecture_Project/sql/03_questions.sql` for the 5 required questions.
 - Use `src/safe_sql.py` for dynamic execution guarded by views and LIMIT.
 
 ## Screenshots
-- Save evidence in `report/screenshots/` (folder pre-created).
+- Save evidence in `PD_Data_Architecture_Projects/report/screenshots/` (folder pre-created).
 
 ## Notes
 - Never hardcode credentials; all code reads `DATABASE_URL` from environment.
