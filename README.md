@@ -194,6 +194,37 @@ These are typical results from a standard run (counts may vary if you use env ov
 
 Reproduce exactly via the commands in End-to-end Pipeline; results are written to `report/`.
 
+## SQL Question Results
+Below are screenshots of the query outputs and brief explanations. All images live under `report/` for GitHub rendering.
+
+### Q1 — Spring 2026 Completed Student Alumni
+- What it shows: The count of distinct student participants who completed the Spring 2026 Mentorship Program (unsponsored) and a list of their names.
+- Image: ![Q1 Completed Students](report/question_1.png)
+
+### Q2 — Hofstra Applicants in 2024
+- What it shows: The number of applicants whose primary school is Hofstra University, with application timestamps falling in calendar year 2024.
+- Image: ![Q2 Hofstra Applicants 2024](report/Question_2.png)
+
+### Q3 — Corporate Partners Sponsoring Fall 2025
+- Part 1 (count): Distinct count of corporate partners that sponsored any Fall 2025 program.
+- Image: ![Q3 Sponsor Count](report/Question_3_1.png)
+- Part 2 (detail): A list of Fall 2025 programs alongside each sponsor (if any), useful for verifying sponsorship distribution.
+- Image: ![Q3 Program-Sponsor Detail](report/Question_3_2.png)
+- Part 3 (account types): A quick check of sponsor companies and their `account_type`, confirming these are corporate entities.
+- Image: ![Q3 Sponsor Account Types](report/Question_3_3.png)
+
+### Q4 — Spring 2026 Alumni Placed in Real Estate Development
+- Part 1 (count): Distinct alumni from Spring 2026 programs whose most recent job (`work_experiences`) is at a firm with `industry_primary = 'Real Estate Development'`.
+- Image: ![Q4 Alumni in RE Development (Count)](report/Question_4_1.png)
+- Part 2 (detail): Student-by-firm mapping for those alumni placed into Real Estate Development.
+- Image: ![Q4 Alumni in RE Development (Detail)](report/Question_4_2.png)
+
+### Q5 — Next Corporate Partner to Re‑Engage
+- Part 1 (ranking): A ranking of partners by most stale program term (oldest `year + season` among sponsored programs), plus programs sponsored — identifies re‑engagement targets.
+- Image: ![Q5 Re‑Engagement Ranking](report/Questin_5_1.png)
+- Part 2 (outcomes): A simple outcome rollup for a selected partner (e.g., Hines) showing completions vs total participants, to strengthen re‑engagement rationale.
+- Image: ![Q5 Partner Outcomes](report/Question_5_2.png)
+
 ## Security & Secrets
 - `.env` is ignored via `.gitignore` and not committed.
 - Scripts read `DATABASE_URL` from environment; the README uses commands that only echo a truncated value.
