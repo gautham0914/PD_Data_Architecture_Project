@@ -1,19 +1,21 @@
 """
-ETL: School name canonicalization + alias mapping + review queue insert
+ETL: Name canonicalization + alias mapping + review queue insert
 
-Goal: "do both"
-- Normalize now: produce a canonical school name used for matching Accounts
-- Store alias mappings for scalability: persist raw variants -> canonical Account
-- Queue uncertain names for human review in pd.etl_school_name_review_queue
-
-Dependencies: rapidfuzz for fuzzy matching, psycopg v3, python-dotenv
+Matches raw names (school/company) to pd.accounts using:
+1) exact match on name_canonical
+2) exact match on account_aliases.alias_name
+3) fuzzy match (rapidfuzz) against accounts.name_canonical
+If matched: insert alias mapping into pd.account_aliases (raw -> account_id)
+If not matched: insert into pd.etl_school_name_review_queue for human review
 """
 from __future__ import annotations
 
+import re
+import uuid
 from dataclasses import dataclass
-from typing import Iterable, Optional
+from typing import Optional
 
-from rapidfuzz import fuzz, process
+from rapidfuzz import fuzz
 
 from .db import connect
 
@@ -22,128 +24,182 @@ from .db import connect
 class CanonicalizationResult:
     raw: str
     normalized: str
-    account_id: Optional[int]
-    matched_via: str  # "exact" | "fuzzy" | "none"
-    score: Optional[float]  # similarity score if fuzzy
+    account_id: Optional[uuid.UUID]
+    matched_via: str  # "canonical_exact" | "alias_exact" | "fuzzy" | "none"
+    score: Optional[float]
 
 
-def _basic_normalize(name: str) -> str:
-    """Lowercase, strip, remove common noise to help matching."""
-    n = name.strip().lower()
-    # Remove common suffix/prefix noise; keep beginner-friendly and simple.
-    for token in ["university", "college", "inc.", "corp.", "llc", "univ."]:
-        n = n.replace(token, "").strip()
-    # Collapse extra spaces
-    n = " ".join(n.split())
-    return n
+def _normalize_text(s: str) -> str:
+    s = s.strip().lower()
+    s = re.sub(r"\s+", " ", s)
+    s = re.sub(r"[^a-z0-9 ]", "", s)
+    return s
 
 
-def fetch_account_candidates() -> list[tuple[int, str]]:
+def fetch_account_candidates(cur, account_type_hint: Optional[str] = None) -> list[tuple[uuid.UUID, str]]:
     """
-    Load candidate Accounts (id, canonical_name) from pd.accounts.
-    The table definition is assumed to include an id and name-like column.
-    Adjust column names as needed to your schema.
+    Returns [(account_id, name_canonical)] filtered by account_type if provided.
+    Uses the SAME cursor/connection as seed.py (no new connection).
     """
-    sql = """
-        select id, name
-        from pd.accounts
-        where type in ('academic', 'school') -- example filter; adjust if needed
-    """
-    with connect() as conn, conn.cursor() as cur:
-        cur.execute(sql)
-        return [(row[0], row[1]) for row in cur.fetchall()]
+    if account_type_hint is None:
+        cur.execute("SELECT account_id, name_canonical FROM pd.accounts")
+        return cur.fetchall()
+
+    cur.execute(
+        "SELECT account_id, name_canonical FROM pd.accounts WHERE account_type = %s",
+        (account_type_hint,),
+    )
+    return cur.fetchall()
 
 
-def match_school_to_account(raw_name: str, threshold: int = 87) -> CanonicalizationResult:
-    """Match a raw school name to an existing Account via exact or fuzzy logic."""
-    normalized = _basic_normalize(raw_name)
-    candidates = fetch_account_candidates()  # [(id, name)]
-    # Try exact match on normalized against candidate normalized names
-    for account_id, candidate_name in candidates:
-        if _basic_normalize(candidate_name) == normalized:
-            return CanonicalizationResult(
-                raw=raw_name,
-                normalized=candidate_name,
-                account_id=account_id,
-                matched_via="exact",
-                score=100.0,
-            )
 
-    # Fuzzy match using rapidfuzz
-    choices = {account_id: candidate_name for account_id, candidate_name in candidates}
-    # use token_set_ratio to ignore word order and duplicates
-    best = None
-    best_score = -1.0
-    for account_id, candidate_name in choices.items():
-        score = fuzz.token_set_ratio(normalized, _basic_normalize(candidate_name))
-        if score > best_score:
-            best = (account_id, candidate_name)
-            best_score = score
+def match_raw_to_account(cur, raw_name: str, account_type_hint: Optional[str], threshold: int = 88) -> CanonicalizationResult:
+    raw_norm = _normalize_text(raw_name)
 
-    if best and best_score >= threshold:
-        account_id, candidate_name = best
-        return CanonicalizationResult(
-            raw=raw_name,
-            normalized=candidate_name,
-            account_id=account_id,
-            matched_via="fuzzy",
-            score=best_score,
+    # 1) canonical exact
+    if account_type_hint is None:
+        cur.execute(
+            """
+            SELECT account_id, name_canonical
+            FROM pd.accounts
+            WHERE regexp_replace(lower(name_canonical), '[^a-z0-9 ]', '', 'g') = %s
+            LIMIT 1
+            """,
+            (raw_norm,),
+        )
+    else:
+        cur.execute(
+            """
+            SELECT account_id, name_canonical
+            FROM pd.accounts
+            WHERE account_type = %s
+              AND regexp_replace(lower(name_canonical), '[^a-z0-9 ]', '', 'g') = %s
+            LIMIT 1
+            """,
+            (account_type_hint, raw_norm),
         )
 
-    return CanonicalizationResult(
-        raw=raw_name,
-        normalized=normalized,
-        account_id=None,
-        matched_via="none",
-        score=None,
+    row = cur.fetchone()
+    if row:
+        return CanonicalizationResult(raw=raw_name, normalized=row[1], account_id=row[0], matched_via="canonical_exact", score=100.0)
+
+    # 2) alias exact
+    if account_type_hint is None:
+        cur.execute(
+            """
+            SELECT aa.account_id, a.name_canonical
+            FROM pd.account_aliases aa
+            JOIN pd.accounts a ON a.account_id = aa.account_id
+            WHERE regexp_replace(lower(aa.alias_name), '[^a-z0-9 ]', '', 'g') = %s
+            LIMIT 1
+            """,
+            (raw_norm,),
+        )
+    else:
+        cur.execute(
+            """
+            SELECT aa.account_id, a.name_canonical
+            FROM pd.account_aliases aa
+            JOIN pd.accounts a ON a.account_id = aa.account_id
+            WHERE a.account_type = %s
+              AND regexp_replace(lower(aa.alias_name), '[^a-z0-9 ]', '', 'g') = %s
+            LIMIT 1
+            """,
+            (account_type_hint, raw_norm),
+        )
+
+    row = cur.fetchone()
+    if row:
+        return CanonicalizationResult(raw=raw_name, normalized=row[1], account_id=row[0], matched_via="alias_exact", score=100.0)
+
+    # 3) fuzzy vs canonical candidates
+    candidates = fetch_account_candidates(cur, account_type_hint)
+    best_id: Optional[uuid.UUID] = None
+    best_name: Optional[str] = None
+    best_score: float = -1.0
+
+    for aid, cname in candidates:
+        score = fuzz.token_set_ratio(raw_norm, _normalize_text(cname))
+        if score > best_score:
+            best_score = score
+            best_id = aid
+            best_name = cname
+
+    if best_id is not None and best_name is not None and best_score >= threshold:
+        return CanonicalizationResult(raw=raw_name, normalized=best_name, account_id=best_id, matched_via="fuzzy", score=best_score)
+
+    return CanonicalizationResult(raw=raw_name, normalized=raw_norm, account_id=None, matched_via="none", score=None)
+
+
+def upsert_alias_mapping(cur, raw_name: str, account_id: uuid.UUID, source_system: str = "etl") -> None:
+    """
+    Insert raw variant into account_aliases pointing to the matched account_id.
+    Your schema has UNIQUE(alias_name) so use ON CONFLICT(alias_name).
+    """
+    cur.execute(
+        """
+        INSERT INTO pd.account_aliases (alias_id, account_id, alias_name, source_system, created_at)
+        VALUES (%s,%s,%s,%s,now())
+        ON CONFLICT (alias_name)
+        DO UPDATE SET account_id = EXCLUDED.account_id, source_system = EXCLUDED.source_system
+        """,
+        (uuid.uuid4(), account_id, raw_name, source_system),
     )
 
 
-def upsert_alias_mapping(raw_name: str, account_id: int, source: str = "etl") -> None:
-    """
-    Persist alias mapping into pd.account_aliases.
-    Assumes columns: id (serial), account_id (int), alias (text), source (text).
-    """
-    sql = """
-        insert into pd.account_aliases (account_id, alias, source)
-        values (%s, %s, %s)
-        on conflict (account_id, alias) do update set source = excluded.source
-    """
-    with connect() as conn, conn.cursor() as cur:
-        cur.execute(sql, (account_id, raw_name, source))
-        conn.commit()
+def queue_for_review(cur, raw_name: str, notes: str = "Unmatched raw input") -> None:
+    cur.execute(
+        """
+        INSERT INTO pd.etl_school_name_review_queue
+          (queue_id, raw_school_name, suggested_account_id, confidence_score, status, notes, created_at, decided_at)
+        VALUES (%s,%s,NULL,NULL,'pending',%s,now(),NULL)
+        """,
+        (uuid.uuid4(), raw_name, notes),
+    )
 
 
-def queue_for_review(raw_name: str, context: Optional[str] = None) -> None:
-    """Insert uncertain names into pd.etl_school_name_review_queue for human review."""
-    sql = """
-        insert into pd.etl_school_name_review_queue (raw_name, context)
-        values (%s, %s)
+def canonicalize_raw_name(cur, raw_name: str, *, account_type_hint: Optional[str], source_system: str) -> CanonicalizationResult:
     """
-    with connect() as conn, conn.cursor() as cur:
-        cur.execute(sql, (raw_name, context))
-        conn.commit()
-
-
-def canonicalize_school_name(raw_name: str, context: Optional[str] = None) -> CanonicalizationResult:
+    Main entry:
+    - match
+    - if matched: upsert alias mapping
+    - else: queue for review
     """
-    Public ETL entrypoint:
-    - Normalize and match against accounts
-    - If matched, upsert alias mapping
-    - If not matched, queue for human review
-    Returns a CanonicalizationResult for downstream usage.
-    """
-    result = match_school_to_account(raw_name)
+    result = match_raw_to_account(cur, raw_name, account_type_hint=account_type_hint)
     if result.account_id is not None:
-        upsert_alias_mapping(raw_name, result.account_id, source="etl")
+        upsert_alias_mapping(cur, raw_name, result.account_id, source_system=source_system)
     else:
-        queue_for_review(raw_name, context=context)
+        queue_for_review(cur, raw_name, notes=f"Unmatched raw input from {source_system}. hint={account_type_hint}")
     return result
 
 
-def process_batch(raw_names: Iterable[str], context: Optional[str] = None) -> list[CanonicalizationResult]:
-    """Process a batch of raw school names and return results for logging/analysis."""
-    results: list[CanonicalizationResult] = []
-    for name in raw_names:
-        results.append(canonicalize_school_name(name, context=context))
-    return results
+def ensure_account_for_raw_company(cur, raw_company: str) -> uuid.UUID:
+    """
+    Seed-only helper: ensure a company account exists for an unmatched raw company.
+
+    Behavior:
+    - Try to match via canonicalization first (company hint). If matched, return that id.
+    - If still unmatched: create a new pd.accounts row with:
+        account_type = 'company'
+        name_canonical = title-cased raw input
+        industry_primary = 'Unknown'
+        website/linkedin_url = NULL
+    Returns the account_id (UUID).
+    """
+    res = canonicalize_raw_name(cur, raw_company, account_type_hint="company", source_system="seed_fallback")
+    if res.account_id is not None:
+        return res.account_id
+
+    # Create placeholder company to preserve FK integrity
+    account_id = uuid.uuid4()
+    name_canonical = raw_company.strip().title()
+    cur.execute(
+        """
+        INSERT INTO pd.accounts (account_id, account_type, name_canonical, website, linkedin_url, industry_primary, created_at)
+        VALUES (%s,'company',%s,NULL,NULL,'Unknown',now())
+        """,
+        (account_id, name_canonical),
+    )
+    # Also store alias mapping so future occurrences map cleanly
+    upsert_alias_mapping(cur, raw_company, account_id, source_system="seed_placeholder")
+    return account_id

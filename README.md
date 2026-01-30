@@ -70,6 +70,106 @@ source .venv/bin/activate
 python -m src.seed
 ```
 
+## Nullability Contract
+- Acceptable nulls: optional fields like `contacts.email`, `contacts.phone`, `contacts.linkedin_url`, `experiences.end_date`, etc.
+- Unacceptable nulls:
+	- Primary keys in all tables (must be non-null)
+	- Key foreign keys (must be non-null):
+		- `work_experiences.company_account_id`
+		- `applications.contact_id`, `applications.opportunity_id`
+		- `experiences.contact_id`, `experiences.opportunity_id`
+		- `opportunity_sponsorships.opportunity_id`
+		- `partner_engagements.sponsor_account_id`
+	- The seed enforces these; a post-seed assert fails if any `work_experiences.company_account_id` is null.
+
+## End-to-end Pipeline
+Run the complete pipeline and reporting:
+
+```bash
+source .venv/bin/activate
+python -m src.seed
+python -m src.data_quality
+python -m src.eda_report
+python -m src.export_excel
+psql "$DATABASE_URL" -f sql/03_questions.sql
+```
+
+Outputs are written under `report/`:
+- `report/null_profile.md`, `report/null_profile.csv`
+- `report/quality_checks.md`
+- `report/eda_report.md` + CSVs in `report/eda_csv/`
+- `report/data_export.xlsx`
+
+## Data Pipeline Overview
+Plain-text diagram of the flow:
+
+```
+Seed (src.seed)
+	-> Data Quality (src.data_quality)
+	-> EDA Summary (src.eda_report)
+	-> Data Export (src.export_excel)
+	-> Apply Views (sql/02_views.sql)
+	-> Run Questions (sql/03_questions.sql)
+```
+
+## What `src/data_quality.py` Checks
+- FK integrity: detects orphans where a foreign key points to a missing parent
+- Duplicate logical keys: `applications(contact_id, opportunity_id)` should have at most one row per pair
+- Unacceptable nulls: primary keys and key foreign keys
+- Outputs:
+	- `report/null_profile.md` + `report/null_profile.csv`
+	- `report/quality_checks.md`
+
+## What `src/eda_report.py` Produces
+- Markdown tables (top summaries) and full CSVs for:
+	- Contact types
+	- Applications by status
+	- Experiences by status
+	- Top schools by applicant count
+	- Placements by `industry_primary`
+	- Sponsor funding totals
+- Outputs:
+	- `report/eda_report.md`
+	- `report/eda_csv/*.csv`
+
+## Acceptable vs Must-Not-Null (Per Table)
+- `pd.accounts`:
+	- Must-not-null: `account_id`, `account_type`, `name_canonical`
+	- Acceptable-null: `website`, `linkedin_url`, `industry_primary`
+- `pd.contacts`:
+	- Must-not-null: `contact_id`, `contact_type`, `first_name`, `last_name`
+	- Acceptable-null: `email`, `phone`, `linkedin_url`, `primary_school_account_id`
+- `pd.applications`:
+	- Must-not-null: `application_id`, `contact_id`, `opportunity_id`, `created_at`
+	- Acceptable-null: `submitted_at`, `source_system`, `status`
+- `pd.experiences`:
+	- Must-not-null: `experience_id`, `contact_id`, `opportunity_id`, `status`
+	- Acceptable-null: `notes`
+- `pd.work_experiences`:
+	- Must-not-null: `work_experience_id`, `contact_id`, `company_account_id`, `title`, `start_date`
+	- Acceptable-null: `end_date`, `source_profile_url`, `source_payload`, `description`
+- `pd.opportunity_sponsorships`:
+	- Must-not-null: `sponsorship_id`, `opportunity_id`, `sponsor_display_name`, `sponsored_amount_usd`
+	- Acceptable-null: `sponsor_account_id`
+- `pd.partner_engagements`:
+	- Must-not-null: `engagement_id`, `sponsor_account_id`, `engagement_date`, `engagement_type`
+	- Acceptable-null: `notes`, `outcome`
+- `pd.outreach_messages`:
+	- Must-not-null: `message_id`, `sponsor_account_id`, `contact_id`, `channel`, `body`, `sent_at`
+	- Acceptable-null: `subject`
+- `pd.account_aliases`:
+	- Must-not-null: `alias_id`, `account_id`, `alias_name`
+	- Acceptable-null: `source_system`
+
+## Why Some NULLs Are Realistic
+- Form/CRM data is often incomplete: emails and phone numbers are optional; end dates may be unknown; social links may be missing.
+- Sponsor account linkage can be absent for PD-sponsored programs; display name is used as a fallback.
+- The seed enforces a Nullability Contract for key FKs (e.g., `work_experiences.company_account_id`) and checks are reported in `report/quality_checks.md`.
+
+## Security & Secrets
+- `.env` is ignored via `.gitignore` and not committed.
+- Scripts read `DATABASE_URL` from environment; the README uses commands that only echo a truncated value.
+
 Speed tips:
 - You can lower the generated row counts by exporting env vars before running seed:
 

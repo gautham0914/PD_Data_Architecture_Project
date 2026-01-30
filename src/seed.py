@@ -9,7 +9,7 @@ from faker import Faker
 from .db import connect
 fake = Faker()
 random.seed(42)
-from .etl import canonicalize_raw_name
+from .etl import canonicalize_raw_name, ensure_account_for_raw_company
 # -------------------------
 # Scale (simple + strong but not massive)
 # -------------------------
@@ -120,6 +120,12 @@ def main() -> None:
         seed_sponsorships(cur, opp_map=opps, sponsor_ids=ids["sponsor_ids"])
         seed_partner_engagements(cur, sponsor_ids=ids["sponsor_ids"])
         seed_outreach(cur, sponsor_ids=ids["sponsor_ids"], contact_ids=contacts["all_contacts"])
+
+        # Data quality assert: no NULL company_account_id in work_experiences
+        cur.execute("select count(*) from pd.work_experiences where company_account_id is null")
+        null_count = cur.fetchone()[0]
+        if null_count and int(null_count) > 0:
+            raise RuntimeError(f"Data quality violation: work_experiences.company_account_id NULL count = {null_count}")
 
         conn.commit()
 
@@ -306,6 +312,11 @@ def seed_aliases_and_review_queue(cur, school_ids_by_name: dict[str, uuid.UUID],
     related_id = company_ids_by_name["Related Companies"]
     for a in ["Related", "The Related Companies", "Related Co."]:
         add_alias(related_id, a)
+
+    # Add alias coverage for Boston Properties
+    bxp_id = company_ids_by_name["Boston Properties"]
+    for a in ["BXP", "Boston Props"]:
+        add_alias(bxp_id, a)
 
     # --- Review queue (unknown / ambiguous raw inputs) ---
     uncertain = [
@@ -705,6 +716,11 @@ def seed_work_experiences(
             account_type_hint="company",
             source_system="clay",
         )
+        if res.account_id is None:
+            # Fallback: ensure a company account exists for unmatched raw inputs
+            aid = ensure_account_for_raw_company(cur, raw_company)
+            company_cache[raw_company] = aid
+            return aid
         company_cache[raw_company] = res.account_id
         return res.account_id
 
@@ -819,7 +835,7 @@ def seed_partner_engagements(cur, sponsor_ids: dict[str, uuid.UUID]) -> None:
     outcomes = ["positive", "no_response", "interested", "declined", "follow_up_needed"]
 
     stale_rows: list[tuple] = []
-    for name in ["Hines", "Related Companies"]:
+    for name in ["Hines", "Related Companies", "CBRE", "JLL"]:
         for _ in range(8):
             stale_rows.append(
                 (
@@ -838,6 +854,9 @@ def seed_partner_engagements(cur, sponsor_ids: dict[str, uuid.UUID]) -> None:
         )
 
     sponsor_list = list(sponsor_ids.values())
+    # Ensure stale partners (CBRE, JLL) remain stale by excluding them from newer random engagements
+    stale_exclude = {sponsor_ids.get("CBRE"), sponsor_ids.get("JLL")}
+    sponsor_list = [sid for sid in sponsor_list if sid not in stale_exclude]
     rows: list[tuple] = []
     for _ in range(N_ENGAGEMENTS):
         rows.append(

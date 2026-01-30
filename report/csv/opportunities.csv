@@ -1,0 +1,11 @@
+opportunity_id,parent_opportunity_id,name,season,year,program_track,level,start_date,end_date,created_at
+f2953907-380a-4638-802f-941fccef6b38,,CRE Fundamentals,Fall,2025,CRE Fundamentals,,2025-09-01,2025-12-15,2026-01-30 17:53:28.035803
+84a69683-2aef-444e-a1c4-605b8d4299ed,f2953907-380a-4638-802f-941fccef6b38,CRE Fundamentals (Level 1),Fall,2025,CRE Fundamentals,Level 1,2025-09-10,2025-12-05,2026-01-30 17:53:28.035803
+35209231-cb85-48f4-bd5d-7a07205e7d89,f2953907-380a-4638-802f-941fccef6b38,CRE Fundamentals (Level 2),Fall,2025,CRE Fundamentals,Level 2,2025-09-10,2025-12-05,2026-01-30 17:53:28.035803
+71595315-d434-4a61-b132-de61cce0166f,f2953907-380a-4638-802f-941fccef6b38,CRE Fundamentals (Level 3),Fall,2025,CRE Fundamentals,Level 3,2025-09-10,2025-12-05,2026-01-30 17:53:28.035803
+beef5311-0fad-41df-8f0d-a45881addb60,,Spring 2026 CRE Virtual Internship (Team CBRE Boston),Spring,2026,CRE Virtual Internship,,2026-01-20,2026-05-10,2026-01-30 17:53:28.035803
+1f69f1a8-be74-445b-90d7-70b256d1e7c0,,Spring 2026 CRE Virtual Internship (Team JLL LA),Spring,2026,CRE Virtual Internship,,2026-01-20,2026-05-10,2026-01-30 17:53:28.035803
+6f5171b1-bcde-4db0-a6d1-ece2007fa8d6,,Spring 2026 CRE Virtual Internship (Team Related NYC),Spring,2026,Program,,2026-01-15,2026-04-15,2026-01-30 17:53:28.035803
+7425818d-e520-4ca7-a457-1cb54aa14d45,,Fall 2025 Career Prep (Bootcamp),Fall,2025,Program,,2025-09-01,2025-11-30,2026-01-30 17:53:28.035803
+d0e87ca0-9dad-4427-a74f-5db2a550fb1a,,Spring 2026 Mentorship Program,Spring,2026,Program,,2026-01-15,2026-04-15,2026-01-30 17:53:28.035803
+7f52cbac-0712-442c-90cc-a2de90ee1235,,Fall 2024 CRE Virtual Internship (Team Hines Chicago),Fall,2024,CRE Virtual Internship,,2024-09-10,2024-12-05,2026-01-30 17:53:28.035803
