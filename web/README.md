@@ -6,8 +6,8 @@ This folder contains a read-only, static demo site for the PD Data Architecture 
 Place the following images under `web/assets/`:
 
 - Branding:
-  - `logo.png` — the Project Destined logo (provided)
-  - `community.jpg` — a community-focused photo (ed-tech context)
+  - `pd_logo-no_bg.png` — the Project Destined logo (transparent/no background)
+  - `development_image.png` — a development/learning-focused hero image used on the page
 - Schema:
   - `schema_diagram.png` — database schema diagram
 - SQL Results:
