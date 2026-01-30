@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PD Data Architecture Project — Static Demo</title>
+  <meta name="description" content="Read-only static presentation of a Postgres + Python ETL + AI-ready data architecture." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="brand-bar">
+        <img class="logo" src="assets/logo.png" alt="Project Destined logo" />
+        <h1>PD Data Architecture Project</h1>
+      </div>
+      <p class="subtitle">Read-only static demo: Postgres schema, Python ETL, AI-ready (pgvector + safe SQL)</p>
+      <img class="hero" src="assets/community.jpg" alt="Community-focused hero image" />
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="tech">
+      <h2>Tech Stack</h2>
+      <ul>
+        <li>Postgres (Neon) — application schema <code>pd</code></li>
+        <li>Python 3.11+ — <code>psycopg</code>, <code>python-dotenv</code>, <code>faker</code>, <code>rapidfuzz</code></li>
+        <li>ETL — canonicalization, alias mapping, review queue</li>
+        <li>AI-ready — pgvector embeddings, safe dynamic SQL guardrails</li>
+      </ul>
+    </section>
+
+    <section id="architecture">
+      <h2>Architecture Overview</h2>
+      <ul>
+        <li>Core relational model with foreign keys and read-only views (<code>pd.v_*</code>)</li>
+        <li>ETL normalizes inputs, stores aliases, and queues uncertain cases</li>
+        <li>Safe SQL layer restricts dynamic queries (SELECT-only + enforced LIMIT)</li>
+        <li>Embeddings table supports AI search and recommendations</li>
+        <li>Data quality checks: nullability contract, FK orphan detection, duplicate keys</li>
+      </ul>
+    </section>
+
+    <section id="pipeline">
+      <h2>Data Pipeline Diagram</h2>
+      <pre class="diagram"><code>Seed (src.seed)
+  -> Data Quality (src.data_quality)
+  -> EDA Summary (src.eda_report)
+  -> Data Export (src.export_excel)
+  -> Apply Views (sql/02_views.sql)
+  -> Run Questions (sql/03_questions.sql)</code></pre>
+    </section>
+
+    <section id="schema">
+      <h2>Database Schema</h2>
+      <p>Schema image (tables + key relationships):</p>
+      <img class="schema" src="assets/schema_diagram.png" alt="Database schema diagram" />
+    </section>
+
+    <section id="sql-results">
+      <h2>SQL Questions & Results</h2>
+      <article>
+        <h3>Q1 — Spring 2026 Completed Student Alumni</h3>
+        <p>Count of distinct student participants who completed Spring 2026 Mentorship (unsponsored) + names list.</p>
+        <img src="assets/q1.png" alt="Q1: Completed students" />
+      </article>
+      <article>
+        <h3>Q2 — Hofstra Applicants in 2024</h3>
+        <p>Applicants with primary school = Hofstra University, within calendar year 2024.</p>
+        <img src="assets/q2.png" alt="Q2: Hofstra applicants 2024" />
+      </article>
+      <article>
+        <h3>Q3 — Corporate Partners Sponsoring Fall 2025</h3>
+        <p>Distinct sponsor count, program-sponsor detail, and sponsor account type verification.</p>
+        <div class="grid">
+          <img src="assets/q3_1.png" alt="Q3: Sponsor count" />
+          <img src="assets/q3_2.png" alt="Q3: Program-sponsor detail" />
+          <img src="assets/q3_3.png" alt="Q3: Sponsor account types" />
+        </div>
+      </article>
+      <article>
+        <h3>Q4 — Spring 2026 Alumni in Real Estate Development</h3>
+        <p>Most recent jobs mapped; count and student→firm detail where industry_primary = Real Estate Development.</p>
+        <div class="grid">
+          <img src="assets/q4_1.png" alt="Q4: Alumni in Real Estate Development (count)" />
+          <img src="assets/q4_2.png" alt="Q4: Alumni in Real Estate Development (detail)" />
+        </div>
+      </article>
+      <article>
+        <h3>Q5 — Next Corporate Partner to Re‑Engage</h3>
+        <p>Ranking by most stale program term + program counts; outcome rollup (completions vs participants) to justify re‑engagement.</p>
+        <div class="grid">
+          <img src="assets/q5_1.png" alt="Q5: Re-engagement ranking" />
+          <img src="assets/q5_2.png" alt="Q5: Partner outcomes" />
+        </div>
+      </article>
+    </section>
+
+    <section id="ai-ready">
+      <h2>AI-Readiness</h2>
+      <ul>
+        <li>pgvector embeddings: <code>pd.entity_embeddings</code> supports semantic search.</li>
+        <li>Safe dynamic SQL: LLM-generated queries validated, SELECT-only on views + LIMIT.</li>
+        <li>Query audit logging: traceability for dynamic query executions.</li>
+      </ul>
+      <div class="grid">
+        <img src="assets/embeddings.png" alt="Embeddings table proof (placeholder)" />
+        <img src="assets/ai_ready.png" alt="AI-ready environment proof (placeholder)" />
+        <img src="assets/llm_sql.png" alt="LLM + Safe SQL demo (placeholder)" />
+        <img src="assets/llm_question.png" alt="LLM question execution proof (placeholder)" />
+      </div>
+    </section>
+
+    <section id="links">
+      <h2>Links</h2>
+      <ul>
+        <li><a href="https://github.com/gautham0914/PD_Data_Architecture_Project" target="_blank" rel="noopener">GitHub Repository</a></li>
+        <li><a href="../README.md" target="_blank" rel="noopener">Project README</a></li>
+        <li><a href="../report/" target="_blank" rel="noopener">Report Folder (artifacts)</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Read-only static demo • No backend • No database access</p>
+    </div>
+  </footer>
+</body>
+</html>
