@@ -70,6 +70,14 @@ source .venv/bin/activate
 python -m src.seed
 ```
 
+Speed tips:
+- You can lower the generated row counts by exporting env vars before running seed:
+
+```bash
+export N_CONTACTS=100 N_APPLICATIONS=120 N_EXPERIENCES=90 N_WORK_EXPERIENCES=90 N_OUTREACH=60 N_ENGAGEMENTS=45
+python -m src.seed
+```
+
 Connectivity quick check:
 
 ```bash
