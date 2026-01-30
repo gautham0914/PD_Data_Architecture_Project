@@ -308,3 +308,15 @@ with connect() as conn, conn.cursor() as cur:
 				print(t, cur.fetchone()[0])
 PY
 ```
+
+## Challenges Faced
+Building this project required iterative problem-solving across schema design, data generation, and integration.
+
+- Relational design and seeding order: Getting foreign-key dependencies right and inserting in the correct order during seeding was non-trivial, especially with multiple related tables.
+- Realistic synthetic data: Generating data that felt real yet remained consistent exposed issues like inconsistent naming conventions and missing values that had to be handled explicitly.
+- Data integrity debugging: Addressing null records, empty tables, and constraint violations required validation at each pipeline stage and additional safeguards in the seed and ETL.
+- UUIDs vs numeric IDs: Understanding why UUIDs were chosen over incremental integers clarified trade-offs in scalability, distribution, and collision resistance, as well as the minor cost to joins and readability.
+- ETL + schema integration: Aligning canonicalization/alias logic with the relational model took multiple refinements to avoid duplication and constraint conflicts.
+- AI-readiness: Learning vector embeddings, schema flexibility, and safe dynamic SQL guardrails added a new layer of design considerations.
+
+Overall, these challenges improved understanding of data architecture, schema/ETL trade-offs, and real-world data complexity.
