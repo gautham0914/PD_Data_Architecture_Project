@@ -225,6 +225,21 @@ Below are screenshots of the query outputs and brief explanations. All images li
 - Part 2 (outcomes): A simple outcome rollup for a selected partner (e.g., Hines) showing completions vs total participants, to strengthen re‑engagement rationale.
 - Image: ![Q5 Partner Outcomes](report/Question_5_2.png)
 
+## AI Readiness Proof
+- Embeddings table present: The project includes an embeddings table and demo. See [src/ai_demo.py](src/ai_demo.py) and the screenshot below.
+- Screenshots:
+	- ![Entity Embedding Table](report/entity_embedding.png)
+	- ![AI Ready Proof](report/AI_Ready_Proof.png)
+	- ![Additional AI Ready Evidence](report/Proves_AI_Ready.png)
+- What it shows: The schema and scripts are structured for AI features (pgvector embeddings, query auditing, safe SQL). The screenshots confirm embeddings wiring and environment readiness.
+
+## LLM Dynamic SQL Proof
+- Guardrails: Dynamic execution goes through [src/safe_sql.py](src/safe_sql.py), enforcing `SELECT`-only on `pd.v_*` views with a strict `LIMIT`.
+- Screenshots:
+	- ![LLM + SQL Demo](report/LLM&SQL.png)
+	- ![LLM Question Execution Proof](report/LLM_Question_proof.png)
+- What it shows: An LLM-generated query was validated and executed through the guardrails, returning results while respecting the read-only policy and limits.
+
 ## Security & Secrets
 - `.env` is ignored via `.gitignore` and not committed.
 - Scripts read `DATABASE_URL` from environment; the README uses commands that only echo a truncated value.

@@ -15,6 +15,20 @@ The current database schema (tables and key relationships):
 
 ![Schema Diagram](schema_diagram.png)
 
+## AI Ready & LLM Proofs
+
+These screenshots demonstrate the AI-ready components and guarded LLM-driven SQL.
+
+- AI readiness:
+	- ![Entity Embedding Table](entity_embedding.png)
+	- ![AI Ready Proof](AI_Ready_Proof.png)
+	- ![Additional AI Ready Evidence](Proves_AI_Ready.png)
+- LLM + SQL guardrails:
+	- ![LLM + SQL Demo](LLM&SQL.png)
+	- ![LLM Question Execution Proof](LLM_Question_proof.png)
+
+Context: The project uses pgvector embeddings and a safe SQL layer that restricts dynamic queries to `SELECT` on `pd.v_*` views with enforced `LIMIT`. See the main README for details and links to code.
+
 Usage:
 - Share `quality_checks.md` with stakeholders to confirm the data meets the Nullability Contract.
 - Use `null_profile.csv` for targeted cleanup work or triage.
