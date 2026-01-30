@@ -20,6 +20,8 @@
   </header>
 
   <main class="container">
+    <p class="disclaimer">Independent academic project built for Project Destined coursework.</p>
+
     <section id="tech">
       <h2>Tech Stack</h2>
       <ul>
@@ -27,6 +29,17 @@
         <li>Python 3.11+ — <code>psycopg</code>, <code>python-dotenv</code>, <code>faker</code>, <code>rapidfuzz</code></li>
         <li>ETL — canonicalization, alias mapping, review queue</li>
         <li>AI-ready — pgvector embeddings, safe dynamic SQL guardrails</li>
+      </ul>
+      <span class="badge">AI-Ready Architecture</span>
+    </section>
+
+    <section class="card" id="arch-glance">
+      <h2>Architecture at a Glance</h2>
+      <ul>
+        <li>Postgres (Neon) — application schema <code>pd</code></li>
+        <li>Python ETL with canonicalization &amp; data quality checks</li>
+        <li>Read-only reporting views (<code>pd.v_*</code>)</li>
+        <li>AI-ready: pgvector + safe dynamic SQL</li>
       </ul>
     </section>
 
