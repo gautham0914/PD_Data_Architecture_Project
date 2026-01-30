@@ -173,6 +173,24 @@ Seed (src.seed)
 - Sponsor account linkage can be absent for PD-sponsored programs; display name is used as a fallback.
 - The seed enforces a Nullability Contract for key FKs (e.g., `work_experiences.company_account_id`) and checks are reported in `report/quality_checks.md`.
 
+## Results Snapshot
+These are typical results from a standard run (counts may vary if you use env overrides):
+
+- Tables (example):
+	- `pd.applications`: ~120
+	- `pd.experiences`: ~90
+	- `pd.contacts`: ~200
+	- `pd.work_experiences`: ~180
+	- `pd.outreach_messages`: ~120
+- Five Questions (example):
+	- Spring 2026 alumni completed (Team CBRE Boston): ~10
+	- Hofstra applicants in 2024: ~28
+	- Spring 2026 alumni placed in Real Estate Development: ~30
+	- Corporate partners sponsoring Fall 2025 programs: ~0 (PD-sponsored fundamentals)
+	- Next partners to re-engage (stale >12 months): JLL, CBRE
+
+Reproduce exactly via the commands in End-to-end Pipeline; results are written to `report/`.
+
 ## Security & Secrets
 - `.env` is ignored via `.gitignore` and not committed.
 - Scripts read `DATABASE_URL` from environment; the README uses commands that only echo a truncated value.
