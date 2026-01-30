@@ -14,6 +14,8 @@
 - Views: `pd.v_*` mirror tables for reporting and dynamic SQL
  - Diagram: see [report/schema_diagram.md](report/schema_diagram.md) and PNG [report/schema_diagram.png](report/schema_diagram.png)
 
+![Database Schema](report/schema_diagram.png)
+
 ## ETL
 - Normalize now: lowercasing, noise removal, fuzzy matching (rapidfuzz)
 - Store alias mappings: persist raw → canonical in `pd.account_aliases`

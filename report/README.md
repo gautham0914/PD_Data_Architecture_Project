@@ -9,6 +9,12 @@ This folder stores generated Markdown and CSV artifacts from the pipeline.
 - `eda_csv/`: Full CSV outputs corresponding to EDA summaries (contact types, application statuses, experience statuses, top schools by applicants, placements by industry, sponsor funding totals).
 - `data_export.xlsx`: Full table exports for convenience (stored as Excel).
 
+## Schema Diagram
+
+The current database schema (tables and key relationships):
+
+![Schema Diagram](schema_diagram.png)
+
 Usage:
 - Share `quality_checks.md` with stakeholders to confirm the data meets the Nullability Contract.
 - Use `null_profile.csv` for targeted cleanup work or triage.
