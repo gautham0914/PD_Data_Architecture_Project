@@ -24,6 +24,19 @@
 - Safe dynamic SQL in `src/safe_sql.py`: SELECT-only, `pd.v_*` views, enforced LIMIT
 - Query auditing via `pd.query_audit_log`
 
+## Data Export
+- Export all `pd.*` tables to an Excel workbook: `report/data_export.xlsx`
+- Script: `src/export_excel.py` (uses `openpyxl`)
+
+Run:
+
+```bash
+source .venv/bin/activate
+pip install -r requirements.txt  # ensure openpyxl installed
+python -m src.export_excel
+# Output: report/data_export.xlsx with sheets per table + summary_counts
+```
+
 ## How to Run
 1. Create `.env` from `.env.example` and set `DATABASE_URL`:
 
