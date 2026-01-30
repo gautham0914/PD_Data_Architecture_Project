@@ -1,9 +1,0 @@
-queue_id,raw_school_name,suggested_account_id,confidence_score,status,notes,created_at,decided_at
-635bfd6e-b0ec-4f49-847a-0dfb3f22ff52,Hofstra Univrsity,,,pending,Needs human review: typo likely Hofstra,2026-01-30 17:53:26.116064,
-c75d5390-5f6b-42ef-aaa0-105f2f843821,Penn State - Main,,,pending,Needs human review: could be PSU main campus,2026-01-30 17:53:26.116064,
-869b9ad9-b94f-4685-8af3-06f95131edd4,NYU Tandon,,,pending,Needs human review: sub-school; decide mapping policy,2026-01-30 17:53:26.116064,
-8555ef09-71c2-41d4-b12e-d381b664f41a,Rutgers Newark,,,pending,Needs human review: campus variant; needs policy,2026-01-30 17:53:26.116064,
-025d0197-3222-46ce-8e8c-2b0fff8caa44,UCLA Extension,,,pending,Needs human review: extension program; confirm mapping policy,2026-01-30 17:53:26.116064,
-f8a483c6-f688-4ace-9bf2-3f2ef7b12352,CBRE Boston Office,,,pending,Needs human review: location noise; should map to CBRE,2026-01-30 17:53:26.116064,
-e6272231-5b4a-421f-871b-1761c88f649d,JLL - LA,,,pending,Needs human review: location noise; should map to JLL,2026-01-30 17:53:26.116064,
-6eb3a482-9622-4fa3-a49a-87b9d29d7162,Temple Univ,,,pending,Unmatched raw input from typeform. hint=academic_institution,2026-01-30 17:53:24.812848,

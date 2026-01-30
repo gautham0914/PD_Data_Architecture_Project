@@ -1,11 +1,13 @@
 import pandas as pd
 from pathlib import Path
+import zipfile
 from src.db import connect
 
 # Output paths
 REPORT_DIR = Path("report")
 EXCEL_PATH = REPORT_DIR / "data_export.xlsx"
 CSV_DIR = REPORT_DIR / "csv"
+ZIP_PATH = REPORT_DIR / "pd_tables.zip"
 
 TABLES = [
     "accounts",
@@ -21,13 +23,23 @@ TABLES = [
     "etl_school_name_review_queue",
 ]
 
+def _cleanup_root_csvs() -> None:
+    # Remove any legacy CSVs directly under report/ (not in report/csv/)
+    for p in REPORT_DIR.glob("*.csv"):
+        try:
+            p.unlink()
+        except Exception:
+            pass
+
+
 def export_excel_and_csv():
     REPORT_DIR.mkdir(exist_ok=True)
     CSV_DIR.mkdir(exist_ok=True)
+    _cleanup_root_csvs()
 
     with connect() as conn:
-        # ---- Excel export (single writer, clean close) ----
-        writer = pd.ExcelWriter(EXCEL_PATH, engine="openpyxl")
+        # ---- Excel export (single writer, idempotent overwrite) ----
+        writer = pd.ExcelWriter(EXCEL_PATH, engine="openpyxl", mode="w")
         try:
             for table in TABLES:
                 print(f"Exporting {table}...")
@@ -50,9 +62,20 @@ def export_excel_and_csv():
         finally:
             writer.close()
 
+    # ---- Build ZIP from report/csv/*.csv (idempotent overwrite) ----
+    try:
+        with zipfile.ZipFile(ZIP_PATH, mode="w") as zf:
+            for table in TABLES:
+                csv_path = CSV_DIR / f"{table}.csv"
+                if csv_path.exists():
+                    zf.write(csv_path, arcname=f"{table}.csv")
+    except Exception:
+        pass
+
     print("\n✅ Export complete")
     print(f"📘 Excel: {EXCEL_PATH}")
     print(f"📄 CSVs:  {CSV_DIR}/")
+    print(f"📦 ZIP:   {ZIP_PATH}")
 
 if __name__ == "__main__":
     export_excel_and_csv()

@@ -1,67 +1,123 @@
 engagement_id,sponsor_account_id,engagement_date,engagement_type,notes,outcome,created_at
-dc3d3f6a-d592-43f1-ba17-98e096d15041,6356bcf5-f57f-46e5-b170-2304926a1549,2023-02-07,meeting,Stale but historically valuable partner.,no_response,2026-01-30 16:31:54.493259+00
-171a96d2-4844-4e1c-9099-863164dfdaee,6356bcf5-f57f-46e5-b170-2304926a1549,2023-02-14,program_sponsorship,Stale but historically valuable partner.,positive,2026-01-30 16:31:54.493259+00
-d70f5b3c-c572-4b90-8f90-822d41da3a3a,6356bcf5-f57f-46e5-b170-2304926a1549,2023-11-20,meeting,Stale but historically valuable partner.,follow_up_needed,2026-01-30 16:31:54.493259+00
-81a6dd31-c738-43ce-96b3-79e078cb85cb,6356bcf5-f57f-46e5-b170-2304926a1549,2024-02-12,outreach,Stale but historically valuable partner.,declined,2026-01-30 16:31:54.493259+00
-43069b89-2702-411c-b5d9-8d26e945501c,6356bcf5-f57f-46e5-b170-2304926a1549,2023-09-17,program_sponsorship,Stale but historically valuable partner.,no_response,2026-01-30 16:31:54.493259+00
-2d73d942-e9c1-4cc3-b1c6-bbe704bc8431,6356bcf5-f57f-46e5-b170-2304926a1549,2023-10-20,meeting,Stale but historically valuable partner.,positive,2026-01-30 16:31:54.493259+00
-24ed7aac-3ea9-4235-963a-5d9de42e3890,6356bcf5-f57f-46e5-b170-2304926a1549,2024-11-02,meeting,Stale but historically valuable partner.,interested,2026-01-30 16:31:54.493259+00
-b9345fce-47a6-4835-abd8-10457f4be7b2,6356bcf5-f57f-46e5-b170-2304926a1549,2023-05-08,meeting,Stale but historically valuable partner.,declined,2026-01-30 16:31:54.493259+00
-f95f00f0-a1d3-47d5-9bd9-9114579b40ce,3a475665-993f-4cb1-a932-b2b19796fe1a,2024-02-14,outreach,Stale but historically valuable partner.,declined,2026-01-30 16:31:54.493259+00
-638f20a8-8ccd-4240-aa94-9087a4522a26,3a475665-993f-4cb1-a932-b2b19796fe1a,2024-01-31,meeting,Stale but historically valuable partner.,no_response,2026-01-30 16:31:54.493259+00
-3e895367-6a73-48db-9835-ee3efca0d4c9,3a475665-993f-4cb1-a932-b2b19796fe1a,2024-05-23,outreach,Stale but historically valuable partner.,declined,2026-01-30 16:31:54.493259+00
-3b388eff-51e6-473f-8e68-c26f2ccbeda5,3a475665-993f-4cb1-a932-b2b19796fe1a,2024-01-12,outreach,Stale but historically valuable partner.,interested,2026-01-30 16:31:54.493259+00
-b8498582-4b25-4126-afaa-b423e5c2f916,3a475665-993f-4cb1-a932-b2b19796fe1a,2023-03-26,outreach,Stale but historically valuable partner.,declined,2026-01-30 16:31:54.493259+00
-66f62c14-8201-4d15-abcc-05473f9ef790,3a475665-993f-4cb1-a932-b2b19796fe1a,2023-03-22,meeting,Stale but historically valuable partner.,follow_up_needed,2026-01-30 16:31:54.493259+00
-43d52eb5-9be2-414e-ad50-ac1108f17961,3a475665-993f-4cb1-a932-b2b19796fe1a,2023-07-04,outreach,Stale but historically valuable partner.,interested,2026-01-30 16:31:54.493259+00
-733c9050-d456-4ec4-b92d-3317befddbd7,3a475665-993f-4cb1-a932-b2b19796fe1a,2023-11-25,program_sponsorship,Stale but historically valuable partner.,positive,2026-01-30 16:31:54.493259+00
-8a5e7884-30e3-47c9-a24b-360dcf65a4c3,3a475665-993f-4cb1-a932-b2b19796fe1a,2025-11-07,meeting,I public step example until challenge among community.,interested,2026-01-30 16:31:54.493259+00
-996ec99c-7dbf-4cb0-addd-97be76bdc28e,6356bcf5-f57f-46e5-b170-2304926a1549,2025-09-09,outreach,Those effort member final east dream into fill hospital pay board leader.,declined,2026-01-30 16:31:54.493259+00
-cbe00083-0142-4e1a-b7a0-3a5013f7edea,0d12e743-69ab-4a98-bc1d-c8cd40c7499d,2025-12-07,meeting,Growth chance career reach get as.,interested,2026-01-30 16:31:54.493259+00
-c68da176-9ca1-465d-b477-38fb9565b697,6356bcf5-f57f-46e5-b170-2304926a1549,2024-02-13,outreach,Must data information space century successful mother sort throw table future goal.,interested,2026-01-30 16:31:54.493259+00
-7ab8feaa-b408-474c-b82b-bc7b2dd8ee3a,6356bcf5-f57f-46e5-b170-2304926a1549,2024-10-08,outreach,Election thank century like social anything.,positive,2026-01-30 16:31:54.493259+00
-e9c9e103-811d-4a16-b2a9-446948e76c6c,3819f636-8b5c-4574-a9c4-ee0741f3ba30,2025-11-18,outreach,Often campaign idea happen serious deal middle series get speak drug this our.,declined,2026-01-30 16:31:54.493259+00
-7baa7e9a-d808-4e09-9629-aa445f9d6171,3a475665-993f-4cb1-a932-b2b19796fe1a,2025-06-09,outreach,Generation beat how long site factor meeting nation follow mention account particularly authority pay.,no_response,2026-01-30 16:31:54.493259+00
-48621c8f-3d2b-48c0-a0f9-8b2ee7b82bee,3819f636-8b5c-4574-a9c4-ee0741f3ba30,2024-05-26,outreach,Woman exactly especially generation everyone wear may left name factor worry.,declined,2026-01-30 16:31:54.493259+00
-5370f8de-f46c-4a3b-9393-17e0625fe4b7,3819f636-8b5c-4574-a9c4-ee0741f3ba30,2024-05-09,program_sponsorship,Natural again reach one sound week enter future economy.,no_response,2026-01-30 16:31:54.493259+00
-d06eee9e-dcd4-49fd-a9af-7213392ebd30,3a475665-993f-4cb1-a932-b2b19796fe1a,2025-01-05,meeting,Chair scene pull health computer care cover nature concern race model available agreement.,follow_up_needed,2026-01-30 16:31:54.493259+00
-13f02c31-b569-482c-a878-f00723e3f5ea,3819f636-8b5c-4574-a9c4-ee0741f3ba30,2025-09-11,program_sponsorship,Impact believe once could man fire movie eat if call single join thank.,declined,2026-01-30 16:31:54.493259+00
-0bd96221-4005-4e2d-a6e9-f7a020caa933,3a475665-993f-4cb1-a932-b2b19796fe1a,2025-01-15,meeting,May three room personal each item across talk mother public quickly.,positive,2026-01-30 16:31:54.493259+00
-16dd6cb9-75f5-4a15-a54e-45bcd089b828,0d12e743-69ab-4a98-bc1d-c8cd40c7499d,2025-06-26,meeting,One such suffer analysis great himself bank become minute decade whose body.,declined,2026-01-30 16:31:54.493259+00
-efba1d12-c028-40be-8361-a3b839b7dd20,3a475665-993f-4cb1-a932-b2b19796fe1a,2025-10-27,meeting,Product laugh blood friend us send teach meeting.,no_response,2026-01-30 16:31:54.493259+00
-ebc84f65-7bf9-442a-b179-924115f17e83,3819f636-8b5c-4574-a9c4-ee0741f3ba30,2024-01-27,outreach,Tough nothing news yeah effort decision house central result expect past.,no_response,2026-01-30 16:31:54.493259+00
-9d42ca75-8c34-4eac-b52b-21eea85f9ec1,6356bcf5-f57f-46e5-b170-2304926a1549,2025-06-14,meeting,Authority board administration decade network hope field.,follow_up_needed,2026-01-30 16:31:54.493259+00
-e8efcf0d-315a-4bb2-8914-13a09a4b835b,3819f636-8b5c-4574-a9c4-ee0741f3ba30,2024-09-25,meeting,White least concern project recently customer religious.,declined,2026-01-30 16:31:54.493259+00
-1aeb0693-a161-4c3e-8f16-c61ba3576aba,0d12e743-69ab-4a98-bc1d-c8cd40c7499d,2025-09-18,meeting,Music reveal establish ready option clearly.,declined,2026-01-30 16:31:54.493259+00
-25c6dbc5-5700-46bc-83ab-708fa6c06aaa,0d12e743-69ab-4a98-bc1d-c8cd40c7499d,2024-05-05,program_sponsorship,Doctor everyone nature agreement former store north book concern.,positive,2026-01-30 16:31:54.493259+00
-36a7bd2b-7fa1-42d9-a403-2563d042cb53,6356bcf5-f57f-46e5-b170-2304926a1549,2024-06-25,outreach,Full base region mission first order water any role say hit whether black.,declined,2026-01-30 16:31:54.493259+00
-fc02fc13-e3a4-4e1a-9170-647a8cf68be5,3819f636-8b5c-4574-a9c4-ee0741f3ba30,2025-11-29,meeting,Moment college central himself news mind thing begin perform help.,interested,2026-01-30 16:31:54.493259+00
-d59d9df9-1a94-4e2c-b223-9648252dba1d,3819f636-8b5c-4574-a9c4-ee0741f3ba30,2025-07-17,outreach,Compare threat how specific another there collection.,interested,2026-01-30 16:31:54.493259+00
-6c0f7152-02dd-4855-b1f2-4a3f5d69d3dc,3a475665-993f-4cb1-a932-b2b19796fe1a,2024-06-10,outreach,Color fear body interview but and small create field girl computer.,no_response,2026-01-30 16:31:54.493259+00
-b4b2af2b-981a-47c3-aabc-d5f23298b29e,3a475665-993f-4cb1-a932-b2b19796fe1a,2025-06-04,program_sponsorship,Opportunity start budget young later raise American tonight way sense finish.,positive,2026-01-30 16:31:54.493259+00
-1fba9f20-baae-400b-8270-52bc1041b40b,0d12e743-69ab-4a98-bc1d-c8cd40c7499d,2024-05-22,program_sponsorship,Everybody price few style big few safe color natural wall down.,declined,2026-01-30 16:31:54.493259+00
-a2568e9a-9786-4631-8046-517d79cf5b69,3819f636-8b5c-4574-a9c4-ee0741f3ba30,2025-01-04,outreach,Moment protect floor course cell field similar want product media story.,follow_up_needed,2026-01-30 16:31:54.493259+00
-9838c2fe-af5e-4843-be5f-c68905571839,3a475665-993f-4cb1-a932-b2b19796fe1a,2025-04-23,outreach,Gas tree process interest science foot.,no_response,2026-01-30 16:31:54.493259+00
-e1d02ffc-1eb3-4687-aedf-b37de3bd181a,3819f636-8b5c-4574-a9c4-ee0741f3ba30,2024-03-08,meeting,Ever visit government almost treat specific.,declined,2026-01-30 16:31:54.493259+00
-37ea02f7-9a60-4ca2-b506-2a3827fe172f,6356bcf5-f57f-46e5-b170-2304926a1549,2025-06-22,meeting,Risk instead walk north some probably receive season company specific home home.,declined,2026-01-30 16:31:54.493259+00
-86db4f76-3151-45b3-b39c-04718bea9556,3819f636-8b5c-4574-a9c4-ee0741f3ba30,2024-05-08,meeting,Short walk movement year music energy along.,positive,2026-01-30 16:31:54.493259+00
-99c0c591-0819-4429-8398-6f6f24a5f081,6356bcf5-f57f-46e5-b170-2304926a1549,2025-04-22,outreach,System property cut treat sound ahead chance offer.,follow_up_needed,2026-01-30 16:31:54.493259+00
-9d68a3cc-c5a1-4886-81f4-279eed767957,3a475665-993f-4cb1-a932-b2b19796fe1a,2024-05-11,outreach,Easy work economy billion natural even would week near table imagine exactly high.,follow_up_needed,2026-01-30 16:31:54.493259+00
-27191126-764d-4816-b79b-1802a8ebc665,0d12e743-69ab-4a98-bc1d-c8cd40c7499d,2024-05-12,meeting,Best authority half choice ask nothing shake speech water parent upon tonight.,follow_up_needed,2026-01-30 16:31:54.493259+00
-011a3660-2487-4927-90dc-4d3dd5247534,3819f636-8b5c-4574-a9c4-ee0741f3ba30,2024-05-07,outreach,Cost medical summer after by assume life impact.,no_response,2026-01-30 16:31:54.493259+00
-65f3dcd5-fe4a-477a-8ca1-b332b054dce4,3a475665-993f-4cb1-a932-b2b19796fe1a,2024-06-17,program_sponsorship,Amount finally stop design nothing group one production government important travel question know.,interested,2026-01-30 16:31:54.493259+00
-0e3f7592-9e23-4d76-ba2d-a5f131f97b34,0d12e743-69ab-4a98-bc1d-c8cd40c7499d,2024-12-20,outreach,Actually ground join hear teacher Mr radio.,interested,2026-01-30 16:31:54.493259+00
-6d8d733f-f674-41ca-9b99-e949def12006,3819f636-8b5c-4574-a9c4-ee0741f3ba30,2024-09-13,program_sponsorship,Church throw huge answer agency issue cultural state account audience attention begin.,follow_up_needed,2026-01-30 16:31:54.493259+00
-c7a9bcb4-ba07-4b9a-b2f4-f70f404f46ad,3a475665-993f-4cb1-a932-b2b19796fe1a,2024-05-08,outreach,Apply task have center artist war what.,interested,2026-01-30 16:31:54.493259+00
-01f81eb5-6b7c-4c25-9f01-cd4313ac9712,3819f636-8b5c-4574-a9c4-ee0741f3ba30,2025-05-29,outreach,Very country yet contain include product support seem allow full.,no_response,2026-01-30 16:31:54.493259+00
-20f4164f-a925-45e5-a5d9-3aba49cc6f0b,0d12e743-69ab-4a98-bc1d-c8cd40c7499d,2024-06-24,outreach,Response represent bad growth drop reduce soon fall.,follow_up_needed,2026-01-30 16:31:54.493259+00
-2134f220-2cdf-429a-ad44-47bdb6e0f8c5,3a475665-993f-4cb1-a932-b2b19796fe1a,2025-07-31,program_sponsorship,Operation home country decade prove remember name history yard student answer meeting eight.,positive,2026-01-30 16:31:54.493259+00
-10a89612-ca2f-447c-8fbc-4d4b43a3a0fc,3819f636-8b5c-4574-a9c4-ee0741f3ba30,2024-02-16,outreach,Then her trip history sort evening sea important act.,follow_up_needed,2026-01-30 16:31:54.493259+00
-4875dda2-562b-42dd-bfce-e6844adcc178,3a475665-993f-4cb1-a932-b2b19796fe1a,2025-10-28,program_sponsorship,Out local mouth science program remain line official.,follow_up_needed,2026-01-30 16:31:54.493259+00
-61e45fca-5897-4bee-85e4-f9d7210e49bc,6356bcf5-f57f-46e5-b170-2304926a1549,2025-09-24,outreach,Similar full knowledge bit trouble wife voice change.,positive,2026-01-30 16:31:54.493259+00
-389ce8b1-4067-4f47-8524-3f25280e9e9b,6356bcf5-f57f-46e5-b170-2304926a1549,2025-10-04,outreach,Executive effect morning wonder site answer late traditional those table avoid worry talk.,interested,2026-01-30 16:31:54.493259+00
-bf49777a-0879-4c4e-a996-704d7a6039a2,3a475665-993f-4cb1-a932-b2b19796fe1a,2025-05-09,program_sponsorship,Talk fast somebody know ability strategy draw inside rich admit often rate.,declined,2026-01-30 16:31:54.493259+00
-0b26d2d9-ec13-46ef-b9f7-eab6444ff364,3a475665-993f-4cb1-a932-b2b19796fe1a,2025-04-09,program_sponsorship,Wife service range south do could.,positive,2026-01-30 16:31:54.493259+00
-17456831-eb73-40d3-b50d-4261d55f2943,0d12e743-69ab-4a98-bc1d-c8cd40c7499d,2025-03-26,meeting,Show manage add break hard pay too treatment tonight decade for throw.,declined,2026-01-30 16:31:54.493259+00
-4b4df6a9-092f-4662-acc2-ac28c1399e78,6356bcf5-f57f-46e5-b170-2304926a1549,2024-07-27,meeting,End paper drug various team party meeting success party discover body.,follow_up_needed,2026-01-30 16:31:54.493259+00
-14814337-4356-4d37-820d-2d89e6b6a961,0d12e743-69ab-4a98-bc1d-c8cd40c7499d,2024-11-16,outreach,Social realize moment audience color anyone.,interested,2026-01-30 16:31:54.493259+00
+8e1a95f8-597c-459e-9ce6-72bc08c03d72,5503f9eb-d6af-401b-8d8a-0f67d104cd47,2024-05-22,outreach,Stale but historically valuable partner.,follow_up_needed,2026-01-30 18:17:58.293476
+4a65e769-0a3f-4e3b-9d70-ecd6a0d811aa,5503f9eb-d6af-401b-8d8a-0f67d104cd47,2023-07-20,meeting,Stale but historically valuable partner.,positive,2026-01-30 18:17:58.293476
+1b52193e-2ecb-4ee2-9745-39e9e3d6b98e,5503f9eb-d6af-401b-8d8a-0f67d104cd47,2023-05-19,meeting,Stale but historically valuable partner.,positive,2026-01-30 18:17:58.293476
+d6350958-eb05-45ce-a847-3b2d46ce85c8,5503f9eb-d6af-401b-8d8a-0f67d104cd47,2024-02-10,meeting,Stale but historically valuable partner.,follow_up_needed,2026-01-30 18:17:58.293476
+973c8cfe-d75c-4da5-bdad-f248323f598b,5503f9eb-d6af-401b-8d8a-0f67d104cd47,2024-01-25,meeting,Stale but historically valuable partner.,declined,2026-01-30 18:17:58.293476
+cd9de7f7-8aa4-43a7-9c59-f9d568ed58d9,5503f9eb-d6af-401b-8d8a-0f67d104cd47,2023-12-09,meeting,Stale but historically valuable partner.,follow_up_needed,2026-01-30 18:17:58.293476
+0442e0a3-3bfd-402a-96a4-e8cceb54b903,5503f9eb-d6af-401b-8d8a-0f67d104cd47,2023-05-20,meeting,Stale but historically valuable partner.,interested,2026-01-30 18:17:58.293476
+9cc5c7b3-d22a-464a-b88a-ee10867e63c9,5503f9eb-d6af-401b-8d8a-0f67d104cd47,2024-09-09,outreach,Stale but historically valuable partner.,no_response,2026-01-30 18:17:58.293476
+7ae201a1-f566-4cf9-bf57-81c3f49db144,069c6d31-9082-4a9e-b3e0-a47a4c1ed569,2024-05-05,meeting,Stale but historically valuable partner.,no_response,2026-01-30 18:17:58.293476
+2d3dfc25-79cd-4967-a76b-751ba8b00c77,069c6d31-9082-4a9e-b3e0-a47a4c1ed569,2024-02-12,meeting,Stale but historically valuable partner.,interested,2026-01-30 18:17:58.293476
+fb1a75e0-61d0-460e-861a-e2250377c2d8,069c6d31-9082-4a9e-b3e0-a47a4c1ed569,2024-12-12,outreach,Stale but historically valuable partner.,declined,2026-01-30 18:17:58.293476
+1ae5b71c-c671-4349-836f-1a3ee9c5441a,069c6d31-9082-4a9e-b3e0-a47a4c1ed569,2024-08-12,program_sponsorship,Stale but historically valuable partner.,interested,2026-01-30 18:17:58.293476
+5bde59d6-919b-4801-abfa-a0cce298cff2,069c6d31-9082-4a9e-b3e0-a47a4c1ed569,2024-01-21,meeting,Stale but historically valuable partner.,declined,2026-01-30 18:17:58.293476
+79492d79-cadf-4dc7-a251-c58db5f89a51,069c6d31-9082-4a9e-b3e0-a47a4c1ed569,2024-01-09,program_sponsorship,Stale but historically valuable partner.,follow_up_needed,2026-01-30 18:17:58.293476
+f1cefaba-6f92-4d85-9347-57bc34bdeb30,069c6d31-9082-4a9e-b3e0-a47a4c1ed569,2023-07-24,outreach,Stale but historically valuable partner.,follow_up_needed,2026-01-30 18:17:58.293476
+b57a26ad-ad5d-4bfc-85e8-be544fbf02fe,069c6d31-9082-4a9e-b3e0-a47a4c1ed569,2023-07-04,outreach,Stale but historically valuable partner.,follow_up_needed,2026-01-30 18:17:58.293476
+a8586605-ca22-4f5d-83b8-380d3b76a798,93d82736-c809-42ee-8ad1-bdab469d6ccd,2023-01-28,outreach,Stale but historically valuable partner.,declined,2026-01-30 18:17:58.293476
+ea38319b-a838-4d28-9a4c-4aab9b62796e,93d82736-c809-42ee-8ad1-bdab469d6ccd,2024-12-26,program_sponsorship,Stale but historically valuable partner.,declined,2026-01-30 18:17:58.293476
+05334be0-3a84-4af3-b104-c3dd7fef10c9,93d82736-c809-42ee-8ad1-bdab469d6ccd,2023-10-26,outreach,Stale but historically valuable partner.,positive,2026-01-30 18:17:58.293476
+4aec12f1-5c9c-4da6-90fd-10c7718c1d2e,93d82736-c809-42ee-8ad1-bdab469d6ccd,2024-02-23,outreach,Stale but historically valuable partner.,declined,2026-01-30 18:17:58.293476
+261dfc95-65f9-4cd4-97ca-1dcdb88bf0ad,93d82736-c809-42ee-8ad1-bdab469d6ccd,2023-05-23,outreach,Stale but historically valuable partner.,interested,2026-01-30 18:17:58.293476
+8986376b-22f6-4750-9139-d29a972dc58d,93d82736-c809-42ee-8ad1-bdab469d6ccd,2023-09-05,meeting,Stale but historically valuable partner.,no_response,2026-01-30 18:17:58.293476
+91f5e83c-1d14-42fe-9f4f-da50e1f8479a,93d82736-c809-42ee-8ad1-bdab469d6ccd,2024-03-09,meeting,Stale but historically valuable partner.,positive,2026-01-30 18:17:58.293476
+0620a1c8-aae5-4bdd-a39f-b00a20b26d73,93d82736-c809-42ee-8ad1-bdab469d6ccd,2024-04-04,outreach,Stale but historically valuable partner.,declined,2026-01-30 18:17:58.293476
+588ef4f1-7e90-4300-a255-abb49eb90d14,81549eb1-2bfd-4e24-9a73-74eaf32f0049,2024-08-19,meeting,Stale but historically valuable partner.,follow_up_needed,2026-01-30 18:17:58.293476
+0762138f-f4a1-4cbb-8039-cacfdca9b4f1,81549eb1-2bfd-4e24-9a73-74eaf32f0049,2024-06-02,outreach,Stale but historically valuable partner.,declined,2026-01-30 18:17:58.293476
+404cdeed-d16f-4959-9ec4-b6b81b5e5210,81549eb1-2bfd-4e24-9a73-74eaf32f0049,2024-07-10,program_sponsorship,Stale but historically valuable partner.,interested,2026-01-30 18:17:58.293476
+4dfc342d-734e-4b58-a1ec-21869e3df450,81549eb1-2bfd-4e24-9a73-74eaf32f0049,2024-12-19,outreach,Stale but historically valuable partner.,follow_up_needed,2026-01-30 18:17:58.293476
+ba382052-6514-4f1d-8338-e96ac0d956c0,81549eb1-2bfd-4e24-9a73-74eaf32f0049,2024-10-15,program_sponsorship,Stale but historically valuable partner.,positive,2026-01-30 18:17:58.293476
+440a7530-7ed8-4e96-8f7e-9be8dbaeec70,81549eb1-2bfd-4e24-9a73-74eaf32f0049,2023-09-12,outreach,Stale but historically valuable partner.,interested,2026-01-30 18:17:58.293476
+96169def-0bc5-42de-a1e1-9b70a0574a64,81549eb1-2bfd-4e24-9a73-74eaf32f0049,2023-06-20,outreach,Stale but historically valuable partner.,follow_up_needed,2026-01-30 18:17:58.293476
+5aa63bb5-3adf-4941-ae2e-cff603197b86,81549eb1-2bfd-4e24-9a73-74eaf32f0049,2023-02-15,outreach,Stale but historically valuable partner.,declined,2026-01-30 18:17:58.293476
+c3a1ec21-7325-4243-92b4-9d18ada0d9fa,5503f9eb-d6af-401b-8d8a-0f67d104cd47,2025-03-16,program_sponsorship,Owner vote thus operation somebody sometimes single enough network include.,positive,2026-01-30 18:17:58.293476
+3413fec3-4625-4b80-ae4b-92268c544e75,069c6d31-9082-4a9e-b3e0-a47a4c1ed569,2024-09-21,program_sponsorship,Ok president kind own hour establish board at traditional.,follow_up_needed,2026-01-30 18:17:58.293476
+76d69c27-bfb9-48cb-bc33-730d025cf0c5,069c6d31-9082-4a9e-b3e0-a47a4c1ed569,2025-04-01,meeting,Develop buy main relationship for kitchen water view blue school listen spend military.,declined,2026-01-30 18:17:58.293476
+6a06130d-6872-45d0-ad60-21df4f9c6b5c,5503f9eb-d6af-401b-8d8a-0f67d104cd47,2025-11-26,outreach,Carry run offer suffer institution project world only customer matter stock beautiful.,follow_up_needed,2026-01-30 18:17:58.293476
+51e3ce8a-f8e0-4808-a768-0290bc2286e3,069c6d31-9082-4a9e-b3e0-a47a4c1ed569,2024-12-19,program_sponsorship,Yeah about bring product prepare window hour.,declined,2026-01-30 18:17:58.293476
+b67da3e9-f044-4a8d-993f-c03a5f4dcc20,069c6d31-9082-4a9e-b3e0-a47a4c1ed569,2024-10-29,meeting,Type pull quite common discussion difference spring back.,positive,2026-01-30 18:17:58.293476
+f94a3ed8-4916-4d17-9ac1-c013daefc120,069c6d31-9082-4a9e-b3e0-a47a4c1ed569,2024-05-25,meeting,True response address really win some participant certainly.,interested,2026-01-30 18:17:58.293476
+d59dc4f6-9b7a-4401-afd9-8d02042c53a3,5503f9eb-d6af-401b-8d8a-0f67d104cd47,2025-04-11,program_sponsorship,Tonight attention box national current compare major thank majority field when.,follow_up_needed,2026-01-30 18:17:58.293476
+cbed72da-7d76-4a91-9af6-cc21813846d4,5503f9eb-d6af-401b-8d8a-0f67d104cd47,2024-12-22,meeting,Really remember follow hope require serious possible computer environment outside.,positive,2026-01-30 18:17:58.293476
+b5011b50-5fe2-4efd-8687-087c9c61a3c8,5503f9eb-d6af-401b-8d8a-0f67d104cd47,2025-12-14,meeting,Study dream spend history quickly ok quality peace economic animal carry.,interested,2026-01-30 18:17:58.293476
+18a0605b-de93-4a40-ab73-feb2c268f3e3,069c6d31-9082-4a9e-b3e0-a47a4c1ed569,2024-11-03,program_sponsorship,Value stop set away alone direction prevent compare series.,positive,2026-01-30 18:17:58.293476
+5767f847-08fc-4dbd-b3e3-4737418d2ff3,069c6d31-9082-4a9e-b3e0-a47a4c1ed569,2024-12-17,outreach,Will significant out indeed between miss cultural develop he.,positive,2026-01-30 18:17:58.293476
+792e3b01-87ec-4829-b931-883ef786a04f,069c6d31-9082-4a9e-b3e0-a47a4c1ed569,2024-09-06,outreach,Course leave friend law usually record yet time fly bag side fill.,no_response,2026-01-30 18:17:58.293476
+2031612e-1f8e-426f-9830-ce1f0188f29e,069c6d31-9082-4a9e-b3e0-a47a4c1ed569,2024-12-04,outreach,Him mention themselves ago offer decade sometimes.,declined,2026-01-30 18:17:58.293476
+63321b47-c329-4ae2-bb58-2be08289fcf4,5503f9eb-d6af-401b-8d8a-0f67d104cd47,2024-08-25,meeting,Beyond behind development stuff off and effect around site also positive.,no_response,2026-01-30 18:17:58.293476
+e872ab85-da9a-4180-a2a1-3d3c2dee2611,069c6d31-9082-4a9e-b3e0-a47a4c1ed569,2025-10-17,outreach,Less movement seat consumer case her small though Congress.,declined,2026-01-30 18:17:58.293476
+4a02350c-ba96-433b-b66e-6786228bc803,5503f9eb-d6af-401b-8d8a-0f67d104cd47,2024-01-30,outreach,Make now never light radio arm leave them player east light speak president.,follow_up_needed,2026-01-30 18:17:58.293476
+4da9a5cb-dba8-41ce-a049-f4dde10a6a87,069c6d31-9082-4a9e-b3e0-a47a4c1ed569,2025-04-05,outreach,Hit life include piece before his future main society kind admit carry want.,declined,2026-01-30 18:17:58.293476
+a693d8ec-41da-4ba2-849d-d1c3de6a813c,5503f9eb-d6af-401b-8d8a-0f67d104cd47,2024-01-05,outreach,Cover explain attention certainly friend sure blood.,no_response,2026-01-30 18:17:58.293476
+4674d892-17c7-4b24-9f5c-9d56b11db1a5,069c6d31-9082-4a9e-b3e0-a47a4c1ed569,2024-10-12,outreach,Growth social region operation forget development from country report appear own today health daughter.,positive,2026-01-30 18:17:58.293476
+a26f42dc-3d8f-413f-8a6b-92c071b9dcb2,069c6d31-9082-4a9e-b3e0-a47a4c1ed569,2025-07-03,program_sponsorship,Three debate church memory summer what campaign upon four note today.,interested,2026-01-30 18:17:58.293476
+743083d8-dd1b-4abe-80fe-867fbe496107,5503f9eb-d6af-401b-8d8a-0f67d104cd47,2024-07-20,meeting,Explain majority nothing appear carry voice through alone ready structure white common increase.,positive,2026-01-30 18:17:58.293476
+f592a866-261a-4ea0-9883-6810435bf044,5503f9eb-d6af-401b-8d8a-0f67d104cd47,2025-11-17,meeting,Easy mother day condition parent perhaps source.,follow_up_needed,2026-01-30 18:17:58.293476
+b98746d8-5a0f-4dc9-a985-3a1202a70d98,5503f9eb-d6af-401b-8d8a-0f67d104cd47,2025-09-03,meeting,Around strong because avoid ready Democrat try see when simply base find must.,follow_up_needed,2026-01-30 18:17:58.293476
+bf5c848a-f627-4045-a8de-244939bdd15a,5503f9eb-d6af-401b-8d8a-0f67d104cd47,2025-08-24,program_sponsorship,Miss all continue order range test different.,interested,2026-01-30 18:17:58.293476
+20c19505-3393-4894-b3c5-32547fa3b029,5503f9eb-d6af-401b-8d8a-0f67d104cd47,2025-04-13,outreach,Century your daughter big difficult interest international.,no_response,2026-01-30 18:17:58.293476
+b4daaf38-ed64-4968-879e-1a20ea0d62ba,5503f9eb-d6af-401b-8d8a-0f67d104cd47,2025-09-21,outreach,Put interview describe bag role record pass.,positive,2026-01-30 18:17:58.293476
+d1b221f9-f79a-4c2c-ac9b-e1c8a0c79e2b,069c6d31-9082-4a9e-b3e0-a47a4c1ed569,2024-11-16,program_sponsorship,Provide bit second only class remain half main.,no_response,2026-01-30 18:17:58.293476
+e4551a10-87ee-448d-aa5f-9e950863620b,5503f9eb-d6af-401b-8d8a-0f67d104cd47,2024-04-29,program_sponsorship,Society approach so break son mean vote road probably room travel owner see argue.,interested,2026-01-30 18:17:58.293476
+a875fe02-0cd9-4f1f-8fde-fa6c557335f2,069c6d31-9082-4a9e-b3e0-a47a4c1ed569,2025-06-07,meeting,Top during structure physical several door.,declined,2026-01-30 18:17:58.293476
+71de3ec5-1785-4576-8a7e-0c8e47dec14b,069c6d31-9082-4a9e-b3e0-a47a4c1ed569,2025-08-11,meeting,Education red west quite itself quality reflect boy past stuff probably fund.,declined,2026-01-30 18:17:58.293476
+23a2843e-5225-4690-9e90-1d11f826dac1,069c6d31-9082-4a9e-b3e0-a47a4c1ed569,2025-05-13,outreach,Many soon customer plant institution rock hard star group attention pretty PM.,follow_up_needed,2026-01-30 18:17:58.293476
+3c27d7ba-646c-48e6-8399-2e5da7a7cb7d,069c6d31-9082-4a9e-b3e0-a47a4c1ed569,2025-07-22,program_sponsorship,Check heavy value draw voice believe movement environment reason.,declined,2026-01-30 18:17:58.293476
+3894a493-f45e-40f4-9699-4421328a72d1,5503f9eb-d6af-401b-8d8a-0f67d104cd47,2024-05-23,program_sponsorship,Worry less left term knowledge lawyer star manage blue.,interested,2026-01-30 18:17:58.293476
+4e6fb6e4-813a-47ab-81a5-48d9e9fbb62e,5503f9eb-d6af-401b-8d8a-0f67d104cd47,2025-09-26,program_sponsorship,Chair least administration be agency notice knowledge so your level drug.,interested,2026-01-30 18:17:58.293476
+134ccc80-bcf0-4ef4-9711-6b6d3dfed028,069c6d31-9082-4a9e-b3e0-a47a4c1ed569,2025-05-11,program_sponsorship,Large someone war note lay son let ability student behind course tax write physical.,no_response,2026-01-30 18:17:58.293476
+73b4c8fb-f7f8-43e3-8fd7-d3cd2d32b882,5503f9eb-d6af-401b-8d8a-0f67d104cd47,2025-07-29,outreach,Probably up and clearly deal mission Democrat spend feel course.,declined,2026-01-30 18:17:58.293476
+b07927a3-9502-4018-9b0f-193de5f02b27,5503f9eb-d6af-401b-8d8a-0f67d104cd47,2025-12-02,meeting,Another him middle individual three growth themselves expect do research worker allow.,declined,2026-01-30 18:17:58.293476
+6b9064a9-196e-4487-8591-282062b2b160,5503f9eb-d6af-401b-8d8a-0f67d104cd47,2025-05-15,program_sponsorship,Green wear need yet everything bring.,positive,2026-01-30 18:17:58.293476
+7e065ce0-73c0-44d9-b19a-be5e1c92a1be,069c6d31-9082-4a9e-b3e0-a47a4c1ed569,2024-08-13,meeting,Occur everyone image hold drive sister.,positive,2026-01-30 18:17:58.293476
+fcf676e4-5ca8-4652-9c0e-db18dfd09e47,5503f9eb-d6af-401b-8d8a-0f67d104cd47,2024-08-18,outreach,Near concern off wife also employee anyone heart education full industry consumer science.,interested,2026-01-30 18:17:58.293476
+072effef-1c73-4332-9f4e-fe293aa50bf9,069c6d31-9082-4a9e-b3e0-a47a4c1ed569,2025-04-13,outreach,Mr world offer ok know pretty entire.,declined,2026-01-30 18:17:58.293476
+8f96255d-46cb-4915-84b3-fceadcc785d0,069c6d31-9082-4a9e-b3e0-a47a4c1ed569,2025-08-09,program_sponsorship,Best begin option table wall if trouble account stock newspaper.,interested,2026-01-30 18:17:58.293476
+a131a189-9ffc-45ca-ae47-aa24c85d292a,5503f9eb-d6af-401b-8d8a-0f67d104cd47,2025-07-09,program_sponsorship,Rate matter leader customer least business.,declined,2026-01-30 18:17:58.293476
+b578e638-5f5d-40dd-96a7-d218d8035190,069c6d31-9082-4a9e-b3e0-a47a4c1ed569,2025-03-11,program_sponsorship,System gas sense my hour standard believe mother street operation foot from recently he.,no_response,2026-01-30 18:17:58.293476
+9cb7365c-acd1-4b75-8614-ac0eaedcc017,5503f9eb-d6af-401b-8d8a-0f67d104cd47,2024-02-03,meeting,Reach available year successful practice young worry.,interested,2026-01-30 18:17:58.293476
+584f696b-5f7d-4c81-b735-adbde4732a42,5503f9eb-d6af-401b-8d8a-0f67d104cd47,2024-03-30,meeting,Assume question news stay who capital coach itself.,positive,2026-01-30 18:17:58.293476
+a233b619-83e1-48e5-8494-9c0a2b7850b7,069c6d31-9082-4a9e-b3e0-a47a4c1ed569,2024-08-02,outreach,Understand education find research school plan road forward whose star without cell response.,follow_up_needed,2026-01-30 18:17:58.293476
+ec28947f-5c89-4dc4-992f-2281d6cb4806,5503f9eb-d6af-401b-8d8a-0f67d104cd47,2025-12-28,outreach,Investment growth with record meet image forget early.,declined,2026-01-30 18:17:58.293476
+ec4bc582-763a-4071-b493-94e15db1db92,069c6d31-9082-4a9e-b3e0-a47a4c1ed569,2025-09-22,program_sponsorship,Safe like pull coach peace half sport deep open indicate.,no_response,2026-01-30 18:17:58.293476
+dfc36078-93c1-4652-870e-8a62956977b5,069c6d31-9082-4a9e-b3e0-a47a4c1ed569,2024-03-01,outreach,Sense miss store fill suffer authority scene.,interested,2026-01-30 18:17:58.293476
+8efba571-a555-4d0e-8596-3f0ea5cad1d4,5503f9eb-d6af-401b-8d8a-0f67d104cd47,2025-09-03,outreach,Book box show whole board allow body.,no_response,2026-01-30 18:17:58.293476
+459c2eca-ed19-48c8-8b0e-5e6586e2efdc,5503f9eb-d6af-401b-8d8a-0f67d104cd47,2025-12-21,meeting,Quite somebody price success human thought resource current seek.,interested,2026-01-30 18:17:58.293476
+1722b86e-01d3-4d36-8c24-ee76b8e1376d,5503f9eb-d6af-401b-8d8a-0f67d104cd47,2025-06-10,outreach,Thank ok treat official break difficult run specific although attorney.,positive,2026-01-30 18:17:58.293476
+194dd8cd-e2ce-4f0b-97a6-e1b91001148c,069c6d31-9082-4a9e-b3e0-a47a4c1ed569,2025-02-25,program_sponsorship,Manage then effect say actually theory.,interested,2026-01-30 18:17:58.293476
+0e5c5833-0a18-4507-842f-e2d7add76972,069c6d31-9082-4a9e-b3e0-a47a4c1ed569,2025-12-19,program_sponsorship,Huge game task house space huge baby practice buy already crime.,no_response,2026-01-30 18:17:58.293476
+ec772406-d518-4f90-892c-2d0ab6d941e5,069c6d31-9082-4a9e-b3e0-a47a4c1ed569,2025-12-29,meeting,Main interview child turn rock option million may.,no_response,2026-01-30 18:17:58.293476
+4f4387c3-2229-422d-a368-9f6cd23377a8,5503f9eb-d6af-401b-8d8a-0f67d104cd47,2025-05-16,program_sponsorship,Treatment professor long particularly front major the agency decide floor.,follow_up_needed,2026-01-30 18:17:58.293476
+a017af8a-c346-47a2-9f15-e85264f58d79,5503f9eb-d6af-401b-8d8a-0f67d104cd47,2025-10-04,meeting,Name blood this PM skill them write important interest memory son itself.,declined,2026-01-30 18:17:58.293476
+d56b5803-6dbe-49c4-a9e8-6a09e44b5858,5503f9eb-d6af-401b-8d8a-0f67d104cd47,2024-03-18,outreach,View whose least data draw member action room responsibility day.,positive,2026-01-30 18:17:58.293476
+7e7781f3-fa09-45e8-b2fa-83c084acd99c,5503f9eb-d6af-401b-8d8a-0f67d104cd47,2025-06-11,outreach,Relationship environment interesting shoulder yes popular war clearly.,interested,2026-01-30 18:17:58.293476
+88bb15cf-3e69-4362-98a1-f3b474ce2b47,5503f9eb-d6af-401b-8d8a-0f67d104cd47,2025-04-10,meeting,Own perhaps hear weight third each hot number value five.,interested,2026-01-30 18:17:58.293476
+522d7696-1c02-42a7-b031-ee5d1ed85fbc,069c6d31-9082-4a9e-b3e0-a47a4c1ed569,2024-04-05,outreach,Performance score something traditional current address.,declined,2026-01-30 18:17:58.293476
+4ecaac77-3ca1-4083-898a-1657c8e7b9d3,5503f9eb-d6af-401b-8d8a-0f67d104cd47,2024-03-05,outreach,Company quite cut building interview race me new compare trouble bring suggest always.,declined,2026-01-30 18:17:58.293476
+4f5db69f-4317-4290-a004-b244ea7481ad,069c6d31-9082-4a9e-b3e0-a47a4c1ed569,2025-03-15,program_sponsorship,Bar police time no should artist effort.,declined,2026-01-30 18:17:58.293476
+ceba639e-2f39-4919-ab55-d2b1d321b7b0,5503f9eb-d6af-401b-8d8a-0f67d104cd47,2024-11-26,meeting,Discussion identify term address relate as choice drug use vote memory because.,interested,2026-01-30 18:17:58.293476
+39760f91-81cc-4d68-b295-dd610dd2bc2a,069c6d31-9082-4a9e-b3e0-a47a4c1ed569,2025-08-02,meeting,Hope method draw see act over authority care change.,interested,2026-01-30 18:17:58.293476
+4ac2be88-88e1-435e-a56a-4705e9f963c1,069c6d31-9082-4a9e-b3e0-a47a4c1ed569,2024-02-17,program_sponsorship,Notice air accept personal five claim camera magazine shoulder.,declined,2026-01-30 18:17:58.293476
+51b90d7f-1007-4a9a-bfa6-48b572308b90,069c6d31-9082-4a9e-b3e0-a47a4c1ed569,2024-05-07,program_sponsorship,Agreement nation speak especially under evening front main.,declined,2026-01-30 18:17:58.293476
+9d8f152f-fe82-41f9-b8bd-6c1f524caad9,5503f9eb-d6af-401b-8d8a-0f67d104cd47,2024-01-01,meeting,Learn couple society beat poor suddenly letter individual expert provide approach carry.,no_response,2026-01-30 18:17:58.293476
+99314192-1c38-40d9-8480-921990a814f5,069c6d31-9082-4a9e-b3e0-a47a4c1ed569,2025-10-27,meeting,Foot check kind top standard office really bad.,no_response,2026-01-30 18:17:58.293476
+04892ecf-b111-4cab-b9c7-b9db2da3ca5a,5503f9eb-d6af-401b-8d8a-0f67d104cd47,2024-04-05,outreach,Dream Republican house development mother evening few become claim seek pattern fly crime.,interested,2026-01-30 18:17:58.293476
+fdeacff4-e621-47b5-9e5d-1b5237213d74,5503f9eb-d6af-401b-8d8a-0f67d104cd47,2024-03-25,meeting,Wrong believe leader pull three article Congress way.,no_response,2026-01-30 18:17:58.293476
+561cac85-fc54-40d8-9402-4e86f21de3db,069c6d31-9082-4a9e-b3e0-a47a4c1ed569,2025-02-09,outreach,Husband water include protect building white radio front claim address draw.,interested,2026-01-30 18:17:58.293476
+7d1b0402-2a86-4cdb-a311-ba495d100514,069c6d31-9082-4a9e-b3e0-a47a4c1ed569,2025-03-15,outreach,Goal local range finally PM development pressure research against policy administration bank.,positive,2026-01-30 18:17:58.293476
+b2878d77-da22-43b7-81c3-0f6dbbdec73a,069c6d31-9082-4a9e-b3e0-a47a4c1ed569,2024-01-02,program_sponsorship,Charge offer course already us happy story assume power someone.,declined,2026-01-30 18:17:58.293476
+de53fae4-40fd-4feb-80c2-6f26e2a7aaad,069c6d31-9082-4a9e-b3e0-a47a4c1ed569,2024-05-15,outreach,Meeting drop soldier lay let sometimes.,no_response,2026-01-30 18:17:58.293476
+859b0d38-ed51-4a6c-b8f3-c5f5354886eb,5503f9eb-d6af-401b-8d8a-0f67d104cd47,2024-01-10,program_sponsorship,House produce road indeed individual ask between song job glass arrive large they.,interested,2026-01-30 18:17:58.293476
+5c6b6e95-6967-4e65-bf8f-d00b4ee67ca9,069c6d31-9082-4a9e-b3e0-a47a4c1ed569,2025-03-08,outreach,Short computer indeed company process teach.,no_response,2026-01-30 18:17:58.293476
+361eb2d1-74ee-4793-b40d-ff34f3065537,5503f9eb-d6af-401b-8d8a-0f67d104cd47,2024-03-13,program_sponsorship,Glass ball radio eight record smile degree here nice especially article consider nor.,declined,2026-01-30 18:17:58.293476
+ef1fb526-395d-47a7-9961-00b5f940f279,069c6d31-9082-4a9e-b3e0-a47a4c1ed569,2024-04-14,program_sponsorship,Mission yourself news star about risk star special company again modern.,interested,2026-01-30 18:17:58.293476
+1046cea9-651b-436c-b725-3e754b2109d0,5503f9eb-d6af-401b-8d8a-0f67d104cd47,2024-11-02,program_sponsorship,Political picture responsibility because series writer chance cultural time seem less kind table.,declined,2026-01-30 18:17:58.293476
+95685325-e535-4b81-a670-b0e736be4cb6,069c6d31-9082-4a9e-b3e0-a47a4c1ed569,2025-10-18,outreach,Since do hand affect soldier early all beat interview nature ten old son.,no_response,2026-01-30 18:17:58.293476
+214f7f37-e0fb-4500-a71d-1698a68e376e,069c6d31-9082-4a9e-b3e0-a47a4c1ed569,2025-06-27,outreach,Fish wonder new effect word tend than.,positive,2026-01-30 18:17:58.293476
+9b777837-7e59-46e5-a54c-da5ab5089df5,069c6d31-9082-4a9e-b3e0-a47a4c1ed569,2025-03-26,meeting,Candidate candidate natural spend church represent describe.,no_response,2026-01-30 18:17:58.293476
+faf04a5f-fd9e-4fc0-b597-e3c0720e355d,069c6d31-9082-4a9e-b3e0-a47a4c1ed569,2025-02-25,outreach,Amount resource away difficult woman you.,declined,2026-01-30 18:17:58.293476
+250b6989-7b36-4048-a6e8-d98a0701963e,069c6d31-9082-4a9e-b3e0-a47a4c1ed569,2024-03-29,program_sponsorship,Degree type it recognize small real.,no_response,2026-01-30 18:17:58.293476
+fee68969-f08e-4ea3-b534-b11bfc308558,069c6d31-9082-4a9e-b3e0-a47a4c1ed569,2025-08-26,outreach,Store little all performance either drug physical realize practice by consider before.,declined,2026-01-30 18:17:58.293476
+cf1706a1-24db-477b-88ff-682d65c711bb,5503f9eb-d6af-401b-8d8a-0f67d104cd47,2025-03-15,meeting,Claim cold after both across town.,no_response,2026-01-30 18:17:58.293476
+6d5347df-3527-40cb-bdd3-5d6ccdbbe5cf,069c6d31-9082-4a9e-b3e0-a47a4c1ed569,2024-10-10,outreach,Answer past home chair off else early option.,positive,2026-01-30 18:17:58.293476

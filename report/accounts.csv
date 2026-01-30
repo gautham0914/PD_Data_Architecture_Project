@@ -1,35 +1,35 @@
 account_id,account_type,name_canonical,website,linkedin_url,industry_primary,created_at
-d8e4c59e-02b1-47fb-b7ff-ad9867372f2a,academic_institution,Hofstra University,https://hofstrauniversity.edu,,Education,2026-01-30 16:31:30.098957+00
-ba186041-7c7c-4ebd-b0ed-1d863dfa9dbd,academic_institution,Boston University,https://bostonuniversity.edu,,Education,2026-01-30 16:31:30.098957+00
-e93a5668-11bf-422e-83b0-21894f247bf8,academic_institution,Rutgers University,https://rutgersuniversity.edu,,Education,2026-01-30 16:31:30.098957+00
-b455336a-48d4-470d-900d-fd241e3e0e20,academic_institution,New York University,https://newyorkuniversity.edu,,Education,2026-01-30 16:31:30.098957+00
-242f13c3-b03d-410b-9142-a3c5ec1e5ce3,academic_institution,Temple University,https://templeuniversity.edu,,Education,2026-01-30 16:31:30.098957+00
-2375f1a8-ddfa-457c-87df-ce8884bbc1dd,academic_institution,Drexel University,https://drexeluniversity.edu,,Education,2026-01-30 16:31:30.098957+00
-eb7bdd8e-56dd-4828-acf1-f2f50a6cf6e3,academic_institution,The Pennsylvania State University,https://thepennsylvaniastateuniversity.edu,,Education,2026-01-30 16:31:30.098957+00
-9538dabf-718c-461b-bd44-a68951514d23,academic_institution,"University of California, Los Angeles",https://universityofcalifornialosangeles.edu,,Education,2026-01-30 16:31:30.098957+00
-ca457ffc-593f-45cd-84a1-b0d4e154f7c2,academic_institution,University of Southern California,https://universityofsoutherncalifornia.edu,,Education,2026-01-30 16:31:30.098957+00
-fac3a628-59f1-436d-877b-a42156acfc04,academic_institution,Dustinmouth University,https://dustinmouthuniversity.edu,,Education,2026-01-30 16:31:30.098957+00
-2895090a-8458-4573-a7f7-96606a40247b,academic_institution,Port David University,https://portdaviduniversity.edu,,Education,2026-01-30 16:31:30.098957+00
-5e51616f-41d2-4561-b193-daf1e3d02eeb,academic_institution,New David College,https://newdavidcollege.edu,,Education,2026-01-30 16:31:30.098957+00
-caf44ffa-baa3-4320-8fa4-7c682c4d1cb2,academic_institution,South Kurt University,https://southkurtuniversity.edu,,Education,2026-01-30 16:31:30.098957+00
-7ec459e5-45be-476f-8621-3e5e0d3a9b7b,academic_institution,Pricefort University,https://pricefortuniversity.edu,,Education,2026-01-30 16:31:30.098957+00
-d0b01720-6686-4396-843c-05a1a50df574,academic_institution,Port Chadstad University,https://portchadstaduniversity.edu,,Education,2026-01-30 16:31:30.098957+00
-91948ac8-c278-416f-8e17-2922a753453a,academic_institution,Ryantown University,https://ryantownuniversity.edu,,Education,2026-01-30 16:31:30.098957+00
-11ee94da-e44b-41c8-9722-100d38baf57f,academic_institution,Campbellbury University,https://campbellburyuniversity.edu,,Education,2026-01-30 16:31:30.098957+00
-a51d8ad5-4952-43af-95c6-81985494c071,academic_institution,South Jerome College,https://southjeromecollege.edu,,Education,2026-01-30 16:31:30.098957+00
-fcc3a907-e570-4f22-808b-fa7353828aa9,academic_institution,Port Johnmouth University,https://portjohnmouthuniversity.edu,,Education,2026-01-30 16:31:30.098957+00
-33e4f574-c8d5-4434-8c0e-4ccfd9257423,academic_institution,Heidiburgh University,https://heidiburghuniversity.edu,,Education,2026-01-30 16:31:30.098957+00
-6f4df01b-a8ad-4aaa-96e5-a631b827d480,academic_institution,West Briannashire University,https://westbriannashireuniversity.edu,,Education,2026-01-30 16:31:30.098957+00
-d4f8c991-55a7-4968-8142-5e0ae5de838e,academic_institution,Timothyborough University,https://timothyboroughuniversity.edu,,Education,2026-01-30 16:31:30.098957+00
-d9db44a2-53c2-40ae-bf9f-d8a5372cb04b,academic_institution,Blackfurt University,https://blackfurtuniversity.edu,,Education,2026-01-30 16:31:30.098957+00
-b90ff28f-b6a3-433c-a376-d6c8e198f498,academic_institution,Lake Allison University,https://lakeallisonuniversity.edu,,Education,2026-01-30 16:31:30.098957+00
-8ff36b1e-414c-4474-9894-e5a59adaeed6,academic_institution,North Tiffany University,https://northtiffanyuniversity.edu,,Education,2026-01-30 16:31:30.098957+00
-3819f636-8b5c-4574-a9c4-ee0741f3ba30,company,CBRE,https://cbre.com,,Commercial Real Estate,2026-01-30 16:31:30.098957+00
-0d12e743-69ab-4a98-bc1d-c8cd40c7499d,company,JLL,https://jll.com,,Commercial Real Estate,2026-01-30 16:31:30.098957+00
-3a475665-993f-4cb1-a932-b2b19796fe1a,company,Related Companies,https://relatedcompanies.com,,Real Estate Development,2026-01-30 16:31:30.098957+00
-6356bcf5-f57f-46e5-b170-2304926a1549,company,Hines,https://hines.com,,Real Estate Development,2026-01-30 16:31:30.098957+00
-2a6fe8b1-ca7b-47b9-a165-13bcbb443dbc,company,Boston Properties,https://bostonproperties.com,,Real Estate Development,2026-01-30 16:31:30.098957+00
-b8212980-9eb5-4172-9754-a17f1e68214f,company,Greystar,https://greystar.com,,Real Estate Development,2026-01-30 16:31:30.098957+00
-fb24dc86-3d4e-4749-954c-ea22c5160b5d,company,Deloitte,https://deloitte.com,,Consulting,2026-01-30 16:31:30.098957+00
-deb126ac-908b-4729-bb71-a566c48783d2,company,Goldman Sachs,https://goldmansachs.com,,Finance,2026-01-30 16:31:30.098957+00
-5de49d33-8d52-4921-9548-91708c0e28de,company,Blackstone,https://blackstone.com,,Investment Management,2026-01-30 16:31:30.098957+00
+0a304937-488c-4761-b747-092d0a1d0269,academic_institution,Hofstra University,https://hofstrauniversity.edu,,Education,2026-01-30 18:17:24.965923
+b3e88b03-2ffb-4c43-a723-f80852f9d268,academic_institution,Boston University,https://bostonuniversity.edu,,Education,2026-01-30 18:17:24.965923
+75994a1d-649e-4e8f-a274-c7c4d6158a06,academic_institution,Rutgers University,https://rutgersuniversity.edu,,Education,2026-01-30 18:17:24.965923
+66173e2e-5070-4b7e-af54-95ee32a97617,academic_institution,New York University,https://newyorkuniversity.edu,,Education,2026-01-30 18:17:24.965923
+14644885-ef46-4ebc-9aee-d9d8a2447ca3,academic_institution,Temple University,https://templeuniversity.edu,,Education,2026-01-30 18:17:24.965923
+b03805a4-fb42-47c1-9484-db9c6ed3338e,academic_institution,Drexel University,https://drexeluniversity.edu,,Education,2026-01-30 18:17:24.965923
+ec90c6d4-383a-47c7-a4f8-2b2373a6528e,academic_institution,The Pennsylvania State University,https://thepennsylvaniastateuniversity.edu,,Education,2026-01-30 18:17:24.965923
+9ec75b5f-b4f4-4443-80e4-6d9a21e3f556,academic_institution,"University of California, Los Angeles",https://universityofcalifornialosangeles.edu,,Education,2026-01-30 18:17:24.965923
+c147e4ee-80c4-4996-8933-ce3656173a23,academic_institution,University of Southern California,https://universityofsoutherncalifornia.edu,,Education,2026-01-30 18:17:24.965923
+73d1f43e-2856-47b1-9c48-9e50974404ee,academic_institution,Boydton University,https://boydtonuniversity.edu,,Education,2026-01-30 18:17:24.965923
+4c579e12-9be9-4b7d-99e4-797fddb09f81,academic_institution,Hallview University,https://hallviewuniversity.edu,,Education,2026-01-30 18:17:24.965923
+24a65983-f757-40fe-aa6c-7bb5b8a07832,academic_institution,New Justinview College,https://newjustinviewcollege.edu,,Education,2026-01-30 18:17:24.965923
+52f1f8d8-cb88-4fb1-84a7-f58f9b62d089,academic_institution,Cordovaville University,https://cordovavilleuniversity.edu,,Education,2026-01-30 18:17:24.965923
+bfd72ac0-04aa-4048-89a2-1bcc8a62ccf0,academic_institution,Lake Heatherberg University,https://lakeheatherberguniversity.edu,,Education,2026-01-30 18:17:24.965923
+197d22a4-4e00-46da-a6f3-12da9a5be969,academic_institution,New Reneeside University,https://newreneesideuniversity.edu,,Education,2026-01-30 18:17:24.965923
+5dc8946a-0f73-47d6-b830-18fbc3b935ad,academic_institution,North Deniseport University,https://northdeniseportuniversity.edu,,Education,2026-01-30 18:17:24.965923
+8897a679-a348-48ce-8c68-73d2e270219d,academic_institution,New Colleenfurt University,https://newcolleenfurtuniversity.edu,,Education,2026-01-30 18:17:24.965923
+053a5648-e160-4502-81b6-8d7e3781c431,academic_institution,Adkinsport College,https://adkinsportcollege.edu,,Education,2026-01-30 18:17:24.965923
+ce5d8327-472b-42d0-9306-a2eaa83e49cd,academic_institution,South Linda University,https://southlindauniversity.edu,,Education,2026-01-30 18:17:24.965923
+d5ea3cd6-41b6-42f1-b8f1-29aec7ab7be0,academic_institution,New Sarah University,https://newsarahuniversity.edu,,Education,2026-01-30 18:17:24.965923
+7508ca09-ab5e-43ea-aefe-934bc6cd22f7,academic_institution,Cooleymouth University,https://cooleymouthuniversity.edu,,Education,2026-01-30 18:17:24.965923
+e0397fb7-60cf-463f-a980-d00e76942239,academic_institution,Amyton University,https://amytonuniversity.edu,,Education,2026-01-30 18:17:24.965923
+a649ef0a-916c-48d1-b7bc-46a762fc2417,academic_institution,Allenburgh University,https://allenburghuniversity.edu,,Education,2026-01-30 18:17:24.965923
+d6878d35-a042-4431-912c-72ccc54ba7c4,academic_institution,Murphyport University,https://murphyportuniversity.edu,,Education,2026-01-30 18:17:24.965923
+2c38eece-cc8c-4249-847d-122e01430066,academic_institution,South Kimberlyside University,https://southkimberlysideuniversity.edu,,Education,2026-01-30 18:17:24.965923
+93d82736-c809-42ee-8ad1-bdab469d6ccd,company,CBRE,https://cbre.com,,Commercial Real Estate,2026-01-30 18:17:24.965923
+81549eb1-2bfd-4e24-9a73-74eaf32f0049,company,JLL,https://jll.com,,Commercial Real Estate,2026-01-30 18:17:24.965923
+069c6d31-9082-4a9e-b3e0-a47a4c1ed569,company,Related Companies,https://relatedcompanies.com,,Real Estate Development,2026-01-30 18:17:24.965923
+5503f9eb-d6af-401b-8d8a-0f67d104cd47,company,Hines,https://hines.com,,Real Estate Development,2026-01-30 18:17:24.965923
+fe38f816-7f48-4622-a154-d40b9980ec0e,company,Boston Properties,https://bostonproperties.com,,Real Estate Development,2026-01-30 18:17:24.965923
+a312dc72-9973-4e1e-b583-2002199b55ba,company,Greystar,https://greystar.com,,Real Estate Development,2026-01-30 18:17:24.965923
+06d7d8a1-089e-4aae-b458-706d6df879e6,company,Deloitte,https://deloitte.com,,Consulting,2026-01-30 18:17:24.965923
+2aa74e35-8da5-4c3d-a146-82e7d191cdd4,company,Goldman Sachs,https://goldmansachs.com,,Finance,2026-01-30 18:17:24.965923
+653b7e9f-e017-4501-b625-86aa3492eded,company,Blackstone,https://blackstone.com,,Investment Management,2026-01-30 18:17:24.965923

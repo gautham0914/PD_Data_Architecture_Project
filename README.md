@@ -99,6 +99,13 @@ Outputs are written under `report/`:
 - `report/quality_checks.md`
 - `report/eda_report.md` + CSVs in `report/eda_csv/`
 - `report/data_export.xlsx`
+ - `report/csv/*.csv` (single source of truth for per-table CSVs)
+ - `report/pd_tables.zip` (built only from `report/csv/*.csv`)
+
+CSV Policy:
+- All per-table CSVs live in `report/csv/` — use these only.
+- Do NOT use or create CSVs directly under `report/`.
+- The export script cleans up any legacy `report/*.csv` and zips `report/csv/*.csv` into `report/pd_tables.zip`.
 
 ## Data Pipeline Overview
 Plain-text diagram of the flow:
