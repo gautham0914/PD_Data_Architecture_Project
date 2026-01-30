@@ -1,28 +1,39 @@
--- 1) Spring 2026: completed alumni for a specific program X
-select count(distinct e.contact_id) as alumni_completed
-from pd.v_experiences e
-join pd.v_opportunities o
+set search_path to pd, public;
+
+-- Q1. How many Student Alumni completed Program X in Spring 2026?
+select
+    count(distinct e.contact_id) as completed_students,
+    string_agg(distinct c.first_name || ' ' || c.last_name, ', ') as student_names
+from pd.experiences e
+join pd.opportunities o
   on o.opportunity_id = e.opportunity_id
+left join pd.opportunity_sponsorships os
+  on os.opportunity_id = o.opportunity_id
+join pd.contacts c
+  on c.contact_id = e.contact_id
 where o.season = 'Spring'
   and o.year = 2026
-  and o.name = 'Spring 2026 CRE Virtual Internship (Team CBRE Boston)'
-  and lower(e.status) = 'completed';
+  and o.name = 'Spring 2026 Mentorship Program'
+  and os.opportunity_id is null
+  and c.contact_type = 'student'
+  and e.status = 'completed';
 
-
--- 2) Hofstra applicants in 2024 (school comes from contacts -> accounts)
-select count(*) as hofstra_applicants_2024
+-- Q2) How many all time Student Applicants came from Hofstra University in 2024?
+select
+  count(distinct a.contact_id) as hofstra_applicants_2024
 from pd.v_applications a
 join pd.v_contacts c
   on c.contact_id = a.contact_id
 join pd.v_accounts sch
   on sch.account_id = c.primary_school_account_id
-where lower(sch.name_canonical) like '%hofstra%'
-  and coalesce(a.submitted_at, a.created_at) >= '2024-01-01'
-  and coalesce(a.submitted_at, a.created_at) <  '2025-01-01';
+where sch.name_canonical ilike '%hofstra%'
+  and coalesce(a.submitted_at, a.created_at) >= date '2024-01-01'
+  and coalesce(a.submitted_at, a.created_at) <  date '2025-01-01';
 
 
--- 3) Corporate partners who sponsored Fall 2025 programs
-select count(distinct s.sponsor_account_id) as corporate_partners_fall_2025
+-- Q3) How many corporate partners sponsored programs in Fall 2025?
+select
+  count(distinct s.sponsor_account_id) as corporate_partners_fall_2025
 from pd.v_opportunity_sponsorships s
 join pd.v_opportunities o
   on o.opportunity_id = s.opportunity_id
@@ -30,52 +41,126 @@ where o.season = 'Fall'
   and o.year = 2025
   and s.sponsor_account_id is not null;
 
+-- verify who sponsored Fall 2025
+select
+  o.name,
+  o.season,
+  o.year,
+  s.sponsor_display_name,
+  s.sponsor_account_id
+from pd.v_opportunities o
+left join pd.v_opportunity_sponsorships s
+  on s.opportunity_id = o.opportunity_id
+where o.season = 'Fall'
+  and o.year = 2025
+order by o.name, s.sponsor_display_name;
 
--- 4) Spring 2026 completed alumni who ended up at Real Estate Development firms
-select count(distinct e.contact_id) as spring_2026_alumni_in_re_dev
-from pd.v_experiences e
-join pd.v_opportunities o
-  on o.opportunity_id = e.opportunity_id
-join pd.v_work_experiences w
-  on w.contact_id = e.contact_id
-join pd.v_accounts comp
-  on comp.account_id = w.company_account_id
-where o.season = 'Spring'
-  and o.year = 2026
-  and lower(e.status) = 'completed'
-  and lower(comp.industry_primary) like '%real estate development%';
+-- Checking who coorporate companies are in the data
+select
+  s.sponsor_display_name,
+  a.account_type
+from pd.v_opportunity_sponsorships s
+join pd.accounts a
+  on a.account_id = s.sponsor_account_id
+group by 1,2
+order by 2,1;
 
-
--- 5) Next partner to re-engage: stale engagement + good outcomes (simple ranking)
-with last_touch as (
-  select sponsor_account_id, max(engagement_date) as last_engagement_date
-  from pd.v_partner_engagements
-  group by sponsor_account_id
-),
-outcomes as (
-  select s.sponsor_account_id, count(distinct e.contact_id) as completions
-  from pd.v_opportunity_sponsorships s
-  join pd.v_opportunities o
-    on o.opportunity_id = s.opportunity_id
-  left join pd.v_experiences e
-    on e.opportunity_id = o.opportunity_id
-   and lower(e.status) = 'completed'
+-- Q4) Can you tell me how many alumni from all Spring 2026 programs ended up at firms whose main focus in Real Estate development?
+with spring_2026_alumni as (
+  select distinct e.contact_id
+  from pd.experiences e
+  join pd.opportunities o
+    on o.opportunity_id = e.opportunity_id
+  join pd.contacts c
+    on c.contact_id = e.contact_id
   where o.season = 'Spring'
     and o.year = 2026
-    and s.sponsor_account_id is not null
-  group by s.sponsor_account_id
+    and e.status = 'completed'
+    and c.contact_type = 'student'
+),
+latest_jobs as (
+  select
+    we.contact_id,
+    we.company_account_id,
+    row_number() over (
+      partition by we.contact_id
+      order by we.created_at desc
+    ) as rn
+  from pd.work_experiences we
 )
 select
-  a.account_id,
+  count(distinct lj.contact_id) as alumni_in_real_estate_development
+from spring_2026_alumni a
+join latest_jobs lj
+  on lj.contact_id = a.contact_id
+ and lj.rn = 1
+join pd.accounts company
+  on company.account_id = lj.company_account_id
+where company.industry_primary = 'Real Estate Development';
+
+-- Detail list: student → firm (Real Estate Development)
+with spring_2026_alumni as (
+  select distinct e.contact_id
+  from pd.experiences e
+  join pd.opportunities o
+    on o.opportunity_id = e.opportunity_id
+  join pd.contacts c
+    on c.contact_id = e.contact_id
+  where o.season = 'Spring'
+    and o.year = 2026
+    and e.status = 'completed'
+    and c.contact_type = 'student'
+),
+latest_jobs as (
+  select
+    we.contact_id,
+    we.company_account_id,
+    row_number() over (
+      partition by we.contact_id
+      order by we.created_at desc
+    ) as rn
+  from pd.work_experiences we
+)
+select
+  c.first_name,
+  c.last_name,
+  company.name_canonical as firm_name
+from spring_2026_alumni a
+join latest_jobs lj
+  on lj.contact_id = a.contact_id
+ and lj.rn = 1
+join pd.contacts c
+  on c.contact_id = a.contact_id
+join pd.accounts company
+  on company.account_id = lj.company_account_id
+where company.industry_primary = 'Real Estate Development'
+order by c.last_name, c.first_name;
+
+-- Q5)What should the next corporate partner we re-engage with from the past (given we haven't done programs with them recently), and why? You may want to use an LLM.
+select
   a.name_canonical as partner_name,
-  lt.last_engagement_date,
-  coalesce(o.completions, 0) as spring_2026_completions
-from last_touch lt
-join pd.v_accounts a
-  on a.account_id = lt.sponsor_account_id
-left join outcomes o
-  on o.sponsor_account_id = lt.sponsor_account_id
+  max(o.year || ' ' || o.season) as last_program_term,
+  count(distinct o.opportunity_id) as programs_sponsored
+from pd.opportunity_sponsorships s
+join pd.opportunities o
+  on o.opportunity_id = s.opportunity_id
+join pd.accounts a
+  on a.account_id = s.sponsor_account_id
 where a.account_type = 'company'
-  and lt.last_engagement_date < (current_date - interval '12 months')
-order by coalesce(o.completions, 0) desc, lt.last_engagement_date asc
-limit 10;
+group by a.name_canonical
+order by last_program_term asc;
+
+-- Corporate partner outcome to strengthen the argument
+select
+  a.name_canonical as partner_name,
+  count(*) filter (where e.status = 'completed') as completions,
+  count(*) as total_participants
+from pd.experiences e
+join pd.opportunities o
+  on o.opportunity_id = e.opportunity_id
+join pd.opportunity_sponsorships s
+  on s.opportunity_id = o.opportunity_id
+join pd.accounts a
+  on a.account_id = s.sponsor_account_id
+where a.name_canonical = 'Hines'
+group by a.name_canonical;

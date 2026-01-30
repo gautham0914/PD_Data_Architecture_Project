@@ -1,0 +1,151 @@
+erDiagram
+    accounts {
+        string account_id PK
+        string account_type
+        string name_canonical
+        string industry_primary
+        string website
+        string linkedin_url
+    }
+
+    contacts {
+        string contact_id PK
+        string contact_type
+        string first_name
+        string last_name
+        string email
+        string phone
+        string linkedin_url
+        string primary_school_account_id FK
+    }
+
+    opportunities {
+        string opportunity_id PK
+        string parent_opportunity_id FK
+        string name
+        string season
+        int year
+        string program_track
+        string level
+        date start_date
+        date end_date
+    }
+
+    applications {
+        string application_id PK
+        string contact_id FK
+        string opportunity_id FK
+        string status
+        date submitted_at
+        date created_at
+        string source_system
+    }
+
+    experiences {
+        string experience_id PK
+        string contact_id FK
+        string opportunity_id FK
+        string status
+        date status_at
+        string notes
+    }
+
+    work_experiences {
+        string work_experience_id PK
+        string contact_id FK
+        string company_account_id FK
+        string company_name_raw
+        string title
+        date start_date
+        date end_date
+        bool is_current
+        string location_city
+        string location_state
+        string description
+        string source_system
+        string source_profile_url
+        string source_payload
+        date created_at
+    }
+
+    opportunity_sponsorships {
+        string sponsorship_id PK
+        string opportunity_id FK
+        string sponsor_account_id FK
+        string sponsor_display_name
+        float sponsored_amount_usd
+        date created_at
+    }
+
+    partner_engagements {
+        string engagement_id PK
+        string sponsor_account_id FK
+        date engagement_date
+        string engagement_type
+        string notes
+        string outcome
+        date created_at
+    }
+
+    outreach_messages {
+        string message_id PK
+        string sponsor_account_id FK
+        string contact_id FK
+        string channel
+        string subject
+        string body
+        date sent_at
+        date created_at
+    }
+
+    account_aliases {
+        string alias_id PK
+        string account_id FK
+        string alias_name UNIQUE
+        string source_system
+        date created_at
+    }
+
+    etl_school_name_review_queue {
+        string queue_id PK
+        string raw_school_name
+        string suggested_account_id FK
+        float confidence_score
+        string status
+        string notes
+        date created_at
+        date decided_at
+    }
+
+    entity_embeddings {
+        string embedding_id PK
+        string entity_type
+        string entity_id
+        string embedding
+        date created_at
+    }
+
+    query_audit_log {
+        string audit_id PK
+        string user_id
+        string query_text
+        date executed_at
+        string outcome
+    }
+
+    %% Relationships
+    contacts }o--|| accounts : primary_school_account_id
+    applications }o--|| contacts : contact_id
+    applications }o--|| opportunities : opportunity_id
+    experiences }o--|| contacts : contact_id
+    experiences }o--|| opportunities : opportunity_id
+    work_experiences }o--|| contacts : contact_id
+    work_experiences }o--|| accounts : company_account_id
+    opportunity_sponsorships }o--|| opportunities : opportunity_id
+    opportunity_sponsorships }o--o{ accounts : sponsor_account_id
+    partner_engagements }o--|| accounts : sponsor_account_id
+    outreach_messages }o--|| accounts : sponsor_account_id
+    outreach_messages }o--|| contacts : contact_id
+    account_aliases }o--|| accounts : account_id
+    etl_school_name_review_queue }o--o{ accounts : suggested_account_id
+    opportunities }o--o{ opportunities : parent_opportunity_id

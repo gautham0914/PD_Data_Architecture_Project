@@ -1,0 +1,32 @@
+flowchart LR
+  subgraph Tables
+    A[accounts]
+    C[contacts]
+    O[opportunities]
+    AP[applications]
+    E[experiences]
+    WE[work_experiences]
+    OS[opportunity_sponsorships]
+    PE[partner_engagements]
+    OM[outreach_messages]
+    AA[account_aliases]
+    RQ[etl_school_name_review_queue]
+    EE[entity_embeddings]
+    QL[query_audit_log]
+  end
+
+  C -- primary_school_account_id --> A
+  AP -- contact_id --> C
+  AP -- opportunity_id --> O
+  E -- contact_id --> C
+  E -- opportunity_id --> O
+  WE -- contact_id --> C
+  WE -- company_account_id --> A
+  OS -- opportunity_id --> O
+  OS -- sponsor_account_id --> A
+  PE -- sponsor_account_id --> A
+  OM -- sponsor_account_id --> A
+  OM -- contact_id --> C
+  AA -- account_id --> A
+  RQ -- suggested_account_id --> A
+  O -- parent_opportunity_id --> O
