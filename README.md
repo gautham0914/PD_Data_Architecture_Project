@@ -12,6 +12,7 @@
 - Engagement: opportunity_sponsorships, partner_engagements, outreach_messages
 - ETL/AI: account_aliases, etl_school_name_review_queue, entity_embeddings, query_audit_log
 - Views: `pd.v_*` mirror tables for reporting and dynamic SQL
+ - Diagram: see [report/schema_diagram.md](report/schema_diagram.md) and PNG [report/schema_diagram.png](report/schema_diagram.png)
 
 ## ETL
 - Normalize now: lowercasing, noise removal, fuzzy matching (rapidfuzz)

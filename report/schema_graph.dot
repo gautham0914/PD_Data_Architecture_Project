@@ -1,0 +1,33 @@
+digraph pd_schema {
+  rankdir=LR;
+  node [shape=record, fontsize=10, fontname="Helvetica"];
+
+  accounts [label="{accounts|PK account_id|account_type|name_canonical|industry_primary|website|linkedin_url}"];
+  contacts [label="{contacts|PK contact_id|contact_type|first_name|last_name|email|phone|linkedin_url|FK primary_school_account_id → accounts.account_id}"];
+  opportunities [label="{opportunities|PK opportunity_id|FK parent_opportunity_id → opportunities.opportunity_id|name|season|year|program_track|level|start_date|end_date}"];
+  applications [label="{applications|PK application_id|FK contact_id → contacts.contact_id|FK opportunity_id → opportunities.opportunity_id|status|submitted_at|created_at|source_system}"];
+  experiences [label="{experiences|PK experience_id|FK contact_id → contacts.contact_id|FK opportunity_id → opportunities.opportunity_id|status|status_at|notes}"];
+  work_experiences [label="{work_experiences|PK work_experience_id|FK contact_id → contacts.contact_id|FK company_account_id → accounts.account_id|company_name_raw|title|start_date|end_date|is_current|location_city|location_state|description|source_system|source_profile_url|source_payload|created_at}"];
+  opportunity_sponsorships [label="{opportunity_sponsorships|PK sponsorship_id|FK opportunity_id → opportunities.opportunity_id|FK sponsor_account_id → accounts.account_id|sponsor_display_name|sponsored_amount_usd|created_at}"];
+  partner_engagements [label="{partner_engagements|PK engagement_id|FK sponsor_account_id → accounts.account_id|engagement_date|engagement_type|notes|outcome|created_at}"];
+  outreach_messages [label="{outreach_messages|PK message_id|FK sponsor_account_id → accounts.account_id|FK contact_id → contacts.contact_id|channel|subject|null|body|sent_at|created_at}"];
+  account_aliases [label="{account_aliases|PK alias_id|FK account_id → accounts.account_id|alias_name UNIQUE|source_system|created_at}"];
+  etl_school_name_review_queue [label="{etl_school_name_review_queue|PK queue_id|raw_school_name|FK suggested_account_id → accounts.account_id|confidence_score|status|notes|created_at|decided_at}"];
+
+  // Edges for FKs
+  contacts -> accounts [label="primary_school_account_id", fontsize=9];
+  applications -> contacts [label="contact_id", fontsize=9];
+  applications -> opportunities [label="opportunity_id", fontsize=9];
+  experiences -> contacts [label="contact_id", fontsize=9];
+  experiences -> opportunities [label="opportunity_id", fontsize=9];
+  work_experiences -> contacts [label="contact_id", fontsize=9];
+  work_experiences -> accounts [label="company_account_id", fontsize=9];
+  opportunity_sponsorships -> opportunities [label="opportunity_id", fontsize=9];
+  opportunity_sponsorships -> accounts [label="sponsor_account_id", fontsize=9];
+  partner_engagements -> accounts [label="sponsor_account_id", fontsize=9];
+  outreach_messages -> accounts [label="sponsor_account_id", fontsize=9];
+  outreach_messages -> contacts [label="contact_id", fontsize=9];
+  account_aliases -> accounts [label="account_id", fontsize=9];
+  etl_school_name_review_queue -> accounts [label="suggested_account_id", fontsize=9];
+  opportunities -> opportunities [label="parent_opportunity_id", fontsize=9, color=gray];
+}
