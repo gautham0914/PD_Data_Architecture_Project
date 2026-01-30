@@ -103,7 +103,18 @@ ul li { margin: 6px 0; }
 .schema {
   width: 100%;
   border-radius: 10px;
+  border: none;
+}
+
+.schema-wrap {
+  overflow: auto;
   border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.schema-3x {
+  max-width: none;
+  width: 2940px; /* ~3x the container width (980px) */
 }
 
 .grid {
@@ -116,6 +127,16 @@ ul li { margin: 6px 0; }
   height: auto;
   border-radius: 8px;
   border: 1px solid var(--border);
+}
+
+.grid-lg {
+  grid-template-columns: repeat(auto-fit, minmax(560px, 1fr));
+}
+
+.content-img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .site-footer {
