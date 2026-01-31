@@ -160,5 +160,8 @@ ul li { margin: 6px 0; }
 
 .thanks {
   margin-top: 8px;
+  margin-bottom: 6px;
   color: var(--accent);
+  font-weight: 700;
+  font-size: 1.2rem;
 }
