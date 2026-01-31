@@ -116,28 +116,30 @@
     </section>
 
     <section id="ai-ready">
-      <h2>AI-Readiness</h2>
+      <h2>AI‑Readiness</h2>
       <ul>
         <li>pgvector embeddings: <code>pd.entity_embeddings</code> supports semantic search.</li>
-        <li>Safe dynamic SQL: LLM-generated queries validated, SELECT-only on views + LIMIT.</li>
-        <li>Query audit logging: traceability for dynamic query executions.</li>
+        <li>Embeddings and environment wiring verified.</li>
       </ul>
-      <div class="grid">
-        <img src="assets/embeddings.png" alt="Embeddings table proof (placeholder)" />
-        <img src="assets/ai_ready.png" alt="AI-ready environment proof (placeholder)" />
-        <img src="assets/llm_sql.png" alt="LLM + Safe SQL demo (placeholder)" />
-        <img src="assets/llm_question.png" alt="LLM question execution proof (placeholder)" />
+      <div class="grid grid-1">
+        <a href="assets/embeddings.png" target="_blank" rel="noopener"><img class="content-img" src="assets/embeddings.png" alt="Embeddings table proof" /></a>
+        <a href="assets/ai_ready.png" target="_blank" rel="noopener"><img class="content-img" src="assets/ai_ready.png" alt="AI-ready environment proof" /></a>
       </div>
     </section>
 
-    <section id="links">
-      <h2>Links</h2>
+    <section id="llm-safe-sql">
+      <h2>LLM + Safe SQL</h2>
       <ul>
-        <li><a href="https://github.com/gautham0914/PD_Data_Architecture_Project" target="_blank" rel="noopener">GitHub Repository</a></li>
-        <li><a href="../README.md" target="_blank" rel="noopener">Project README</a></li>
-        <li><a href="../report/" target="_blank" rel="noopener">Report Folder (artifacts)</a></li>
+        <li>Dynamic SQL guardrails: SELECT‑only on views (<code>pd.v_*</code>) with enforced LIMIT.</li>
+        <li>LLM‑generated queries validated and executed with auditing.</li>
       </ul>
+      <div class="grid grid-1">
+        <a href="assets/llm_sql.png" target="_blank" rel="noopener"><img class="content-img" src="assets/llm_sql.png" alt="LLM + Safe SQL demo" /></a>
+        <a href="assets/llm_question.png" target="_blank" rel="noopener"><img class="content-img" src="assets/llm_question.png" alt="LLM question execution proof" /></a>
+      </div>
     </section>
+
+    
   </main>
 
   <footer class="site-footer">

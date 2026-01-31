@@ -129,6 +129,16 @@ ul li { margin: 6px 0; }
   border: 1px solid var(--border);
 }
 
+.grid-1 {
+  grid-template-columns: 1fr;
+}
+
+.content-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .grid-lg {
   grid-template-columns: repeat(auto-fit, minmax(560px, 1fr));
 }
