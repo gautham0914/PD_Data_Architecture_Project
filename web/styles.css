@@ -157,3 +157,8 @@ ul li { margin: 6px 0; }
   color: var(--muted);
 }
 .site-footer .container { border-top: 1px solid var(--border); padding-top: 16px; }
+
+.thanks {
+  margin-top: 8px;
+  color: var(--accent);
+}
