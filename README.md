@@ -186,11 +186,11 @@ These are typical results from a standard run (counts may vary if you use env ov
 	- `pd.work_experiences`: ~180
 	- `pd.outreach_messages`: ~120
 - Five Questions (example):
-	- Spring 2026 alumni completed (Team CBRE Boston): ~10
+	- Spring 2026 alumni completed (Team CBRE Boston): ~8
 	- Hofstra applicants in 2024: ~28
-	- Spring 2026 alumni placed in Real Estate Development: ~30
+	- Spring 2026 alumni placed in Real Estate Development: ~20
 	- Corporate partners sponsoring Fall 2025 programs: ~0 (PD-sponsored fundamentals)
-	- Next partners to re-engage (stale >12 months): JLL, CBRE
+	- Next partners to re-engage : Hines
 
 Reproduce exactly via the commands in End-to-end Pipeline; results are written to `report/`.
 
@@ -198,8 +198,8 @@ Reproduce exactly via the commands in End-to-end Pipeline; results are written t
 Below are screenshots of the query outputs and brief explanations. All images live under `report/` for GitHub rendering.
 
 ### Q1 — Spring 2026 Completed Student Alumni
-- What it shows: The count of distinct student participants who completed the Spring 2026 Mentorship Program (unsponsored) and a list of their names.
-- Image: ![Q1 Completed Students](report/question_1.png)
+- What it shows: The count of distinct student participants who completed the Spring 2026 Program (sponsored by CBRE Boston) and a list of their names.
+- Image: ![Q1 Completed Students](report/Question_1.png)
 
 ### Q2 — Hofstra Applicants in 2024
 - What it shows: The number of applicants whose primary school is Hofstra University, with application timestamps falling in calendar year 2024.
@@ -270,44 +270,6 @@ python -c "from src.db import get_database_url; print(get_database_url()[:40])"
 - Never hardcode credentials; all code reads `DATABASE_URL` from environment.
 - Seed script is a skeleton; adjust column names/types to your actual schema before running.
 - This repo is beginner-readable: short functions, clear comments, and minimal magic.
- 
-## Verification
-The environment and data load were verified end-to-end:
-- Schema accessible and views created (`sql/02_views.sql`).
-- Seed executed via `python -m src.seed` with `.env` loading from project root.
-- Row counts observed in `pd` tables after seed:
-	- `pd.accounts`: 34
-	- `pd.contacts`: 200
-	- `pd.opportunities`: 10
-	- `pd.opportunity_sponsorships`: 7
-	- `pd.applications`: 230
-	- `pd.experiences`: 180
-	- `pd.work_experiences`: 180
-	- `pd.partner_engagements`: 106
-	- `pd.outreach_messages`: 120
-	- `pd.account_aliases`: 5
-	- `pd.etl_school_name_review_queue`: 4
-	- `pd.entity_embeddings`: 0 (placeholder; to be populated by AI demo)
-	- `pd.query_audit_log`: 0 (populated when `safe_sql` is used)
-
-Quick re-verification:
-
-```bash
-source .venv/bin/activate
-python - <<'PY'
-from src.db import connect
-tables = [
-		'accounts','contacts','opportunities','opportunity_sponsorships',
-		'applications','experiences','work_experiences','partner_engagements',
-		'outreach_messages','account_aliases','etl_school_name_review_queue',
-		'entity_embeddings','query_audit_log'
-]
-with connect() as conn, conn.cursor() as cur:
-		for t in tables:
-				cur.execute(f"select count(*) from pd.{t}")
-				print(t, cur.fetchone()[0])
-PY
-```
 
 ## Challenges Faced
 Building this project required iterative problem-solving across schema design, data generation, and integration.
