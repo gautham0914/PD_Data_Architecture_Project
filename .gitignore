@@ -15,3 +15,5 @@ venv/
 
 # Reports
 report/screenshots/
+.vercel
+.env*.local

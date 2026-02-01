@@ -3,18 +3,24 @@ set search_path to pd, public;
 -- Q1. How many Student Alumni completed Program X in Spring 2026?
 select
     count(distinct e.contact_id) as completed_students,
-    string_agg(distinct c.first_name || ' ' || c.last_name, ', ') as student_names
+    string_agg(
+        distinct (c.first_name || ' ' || c.last_name),
+        ', '
+        order by (c.first_name || ' ' || c.last_name)
+    ) as student_names
 from pd.experiences e
 join pd.opportunities o
   on o.opportunity_id = e.opportunity_id
-left join pd.opportunity_sponsorships os
+join pd.opportunity_sponsorships os
   on os.opportunity_id = o.opportunity_id
 join pd.contacts c
   on c.contact_id = e.contact_id
 where o.season = 'Spring'
   and o.year = 2026
-  and o.name = 'Spring 2026 Mentorship Program'
-  and os.opportunity_id is null
+  and o.name ilike '%cre virtual internship%'
+  and o.name ilike '%cbre%'
+  and o.name ilike '%boston%'
+  and os.sponsor_display_name ilike '%cbre%'
   and c.contact_type = 'student'
   and e.status = 'completed';
 

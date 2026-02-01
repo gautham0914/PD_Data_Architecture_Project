@@ -31,3 +31,22 @@ vercel --cwd web --prod
 ```
 
 Alternatively, use Vercel dashboard and set Root Directory to `web`.
+
+## Local API Demo (Serverless)
+
+- Ensure `DATABASE_URL` is set in your environment (Neon Postgres). Optionally set `API_TOKEN`.
+- Vercel CLI can run serverless functions locally:
+
+```bash
+vercel login
+vercel dev
+# Open http://localhost:3000/web/index.html
+```
+
+Environment variables on Vercel:
+- `DATABASE_URL`: Neon connection string
+- `API_TOKEN` (optional): if set, requests must include `x-api-token` header
+
+Endpoints:
+- `POST /api/query` {"query_id": "q1_cbre_boston_completed" | ...}
+- `POST /api/canonicalize` {"raw_name": "Hofstra Univ"}

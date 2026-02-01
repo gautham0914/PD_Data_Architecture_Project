@@ -74,43 +74,83 @@
 
     <section id="sql-results">
       <h2>SQL Questions & Results</h2>
-      <article>
-        <h3>Q1 — Spring 2026 Completed Student Alumni</h3>
-        <p>Count of distinct student participants who completed Spring 2026 Mentorship (unsponsored) + names list.</p>
-        <a href="assets/q1.png" target="_blank" rel="noopener">
-          <img class="content-img" src="assets/q1.png" alt="Q1: Completed students" />
+
+      <!-- Q1 -->
+      <article id="q1">
+        <div class="qnum">Q1</div>
+        <h3>How many Student Alumni have completed the X program from Project Destined in Spring 2026?</h3>
+        <p class="answer">Answer: 8 students completed Spring 2026 CRE Virtual Internship (Team CBRE Boston).</p>
+        <p>
+          A total of 8 student alumni completed the Spring 2026 CRE Virtual Internship (Team CBRE Boston).<br/>
+          The query filters Spring 2026 + the CBRE Boston opportunity and keeps only student contacts.<br/>
+          It counts distinct students with experience status marked as “completed” and lists their names for verification.
+        </p>
+        <a href="assets/Question_1.png" target="_blank" rel="noopener">
+          <img class="content-img" src="assets/Question_1.png" alt="Q1: CBRE Boston completed students" onerror="this.src='assets/q1.png'; this.onerror=null;" />
         </a>
       </article>
-      <article>
-        <h3>Q2 — Hofstra Applicants in 2024</h3>
-        <p>Applicants with primary school = Hofstra University, within calendar year 2024.</p>
+
+      <!-- Q2 -->
+      <article id="q2">
+        <div class="qnum">Q2</div>
+        <h3>How many all time Student Applicants came from Hofstra University in 2024?</h3>
+        <p class="answer">Answer: 28 student applicants came from Hofstra University in 2024.</p>
+        <p>
+          This counts applicants whose primary school maps to the canonical account “Hofstra University.”<br/>
+          It filters applications to the 2024 calendar year to ensure the number is 2024-only.<br/>
+          Canonicalization prevents school name variations from splitting the count.
+        </p>
         <a href="assets/q2.png" target="_blank" rel="noopener">
-          <img class="content-img" src="assets/q2.png" alt="Q2: Hofstra applicants 2024" />
+          <img class="content-img" src="assets/q2.png" alt="Q2: Hofstra applicants 2024" onerror="this.src='assets/no-image.svg'" />
         </a>
       </article>
-      <article>
-        <h3>Q3 — Corporate Partners Sponsoring Fall 2025</h3>
-        <p>Distinct sponsor count, program-sponsor detail, and sponsor account type verification.</p>
+
+      <!-- Q3 -->
+      <article id="q3">
+        <div class="qnum">Q3</div>
+        <h3>How many corporate partners sponsored programs in Fall 2025?</h3>
+        <p class="answer">Answer: 0 corporate partners sponsored programs in Fall 2025 (Project Destined funded).</p>
+        <p>
+          The first screenshot shows the sponsor count for Fall 2025, which is 0.<br/>
+          The second screenshot shows Fall 2025 programs with no corporate sponsor linked (PD-funded).<br/>
+          The third screenshot lists corporate sponsor accounts overall, supporting that Fall 2025 sponsor count is correctly zero.
+        </p>
         <div class="grid grid-lg">
-          <a href="assets/q3_1.png" target="_blank" rel="noopener"><img class="content-img" src="assets/q3_1.png" alt="Q3: Sponsor count" /></a>
-          <a href="assets/q3_2.png" target="_blank" rel="noopener"><img class="content-img" src="assets/q3_2.png" alt="Q3: Program-sponsor detail" /></a>
-          <a href="assets/q3_3.png" target="_blank" rel="noopener"><img class="content-img" src="assets/q3_3.png" alt="Q3: Sponsor account types" /></a>
+          <a href="assets/q3_1.png" target="_blank" rel="noopener"><img class="content-img" src="assets/q3_1.png" alt="Q3: Sponsor count" onerror="this.src='assets/no-image.svg'" /></a>
+          <a href="assets/q3_2.png" target="_blank" rel="noopener"><img class="content-img" src="assets/q3_2.png" alt="Q3: Programs without corporate sponsor" onerror="this.src='assets/no-image.svg'" /></a>
+          <a href="assets/q3_3.png" target="_blank" rel="noopener"><img class="content-img" src="assets/q3_3.png" alt="Q3: Corporate sponsor accounts list" onerror="this.src='assets/no-image.svg'" /></a>
         </div>
       </article>
-      <article>
-        <h3>Q4 — Spring 2026 Alumni in Real Estate Development</h3>
-        <p>Most recent jobs mapped; count and student→firm detail where industry_primary = Real Estate Development.</p>
+
+      <!-- Q4 -->
+      <article id="q4">
+        <div class="qnum">Q4</div>
+        <h3>Can you tell me how many alumni from all Spring 2026 programs ended up at firms whose main focus in Real Estate development?</h3>
+        <p class="answer">Answer: 20 alumni joined Real Estate Development firms.</p>
+        <p>
+          This counts alumni from Spring 2026 programs whose most recent work experience is at a Real Estate Development firm.<br/>
+          It connects program participation (experiences) to employment outcomes (work_experiences + company industry).<br/>
+          The second screenshot lists the alumni-to-firm details that validate the count.
+        </p>
         <div class="grid grid-lg">
-          <a href="assets/q4_1.png" target="_blank" rel="noopener"><img class="content-img" src="assets/q4_1.png" alt="Q4: Alumni in Real Estate Development (count)" /></a>
-          <a href="assets/q4_2.png" target="_blank" rel="noopener"><img class="content-img" src="assets/q4_2.png" alt="Q4: Alumni in Real Estate Development (detail)" /></a>
+          <a href="assets/q4_1.png" target="_blank" rel="noopener"><img class="content-img" src="assets/q4_1.png" alt="Q4: Alumni in Real Estate Development (count)" onerror="this.src='assets/no-image.svg'" /></a>
+          <a href="assets/q4_2.png" target="_blank" rel="noopener"><img class="content-img" src="assets/q4_2.png" alt="Q4: Alumni in Real Estate Development (detail)" onerror="this.src='assets/no-image.svg'" /></a>
         </div>
       </article>
-      <article>
-        <h3>Q5 — Next Corporate Partner to Re‑Engage</h3>
-        <p>Ranking by most stale program term + program counts; outcome rollup (completions vs participants) to justify re‑engagement.</p>
+
+      <!-- Q5 -->
+      <article id="q5">
+        <div class="qnum">Q5</div>
+        <h3>What should the next corporate partner we re-engage with from the past (given we haven't done programs with them recently), and why? You may want to use an LLM.</h3>
+        <p class="answer">Answer: Hines is the recommended partner to re-engage.</p>
+        <p>
+          Hines is recommended because their engagement is stale (not recent) but outcomes are strong.<br/>
+          Completion and participation signals suggest high re-engagement ROI.<br/>
+          This recommendation aligns with the partner history tables and outcome rollups.
+        </p>
         <div class="grid grid-lg">
-          <a href="assets/q5_1.png" target="_blank" rel="noopener"><img class="content-img" src="assets/q5_1.png" alt="Q5: Re-engagement ranking" /></a>
-          <a href="assets/q5_2.png" target="_blank" rel="noopener"><img class="content-img" src="assets/q5_2.png" alt="Q5: Partner outcomes" /></a>
+          <a href="assets/q5_1.png" target="_blank" rel="noopener"><img class="content-img" src="assets/q5_1.png" alt="Q5: Re-engagement ranking" onerror="this.src='assets/no-image.svg'" /></a>
+          <a href="assets/q5_2.png" target="_blank" rel="noopener"><img class="content-img" src="assets/q5_2.png" alt="Q5: Partner outcomes" onerror="this.src='assets/no-image.svg'" /></a>
         </div>
       </article>
     </section>
@@ -121,6 +161,11 @@
         <li>pgvector embeddings: <code>pd.entity_embeddings</code> supports semantic search.</li>
         <li>Embeddings and environment wiring verified.</li>
       </ul>
+      <p>
+        Embeddings stored in <code>pd.entity_embeddings</code> enable semantic similarity search across entities.<br/>
+        The demo queries top matches using pgvector distance and shows environment readiness.<br/>
+        This supports features like partner recommendations and profile matching.
+      </p>
       <div class="grid grid-1">
         <a href="assets/embeddings.png" target="_blank" rel="noopener"><img class="content-img" src="assets/embeddings.png" alt="Embeddings table proof" /></a>
         <a href="assets/ai_ready.png" target="_blank" rel="noopener"><img class="content-img" src="assets/ai_ready.png" alt="AI-ready environment proof" /></a>
@@ -133,6 +178,11 @@
         <li>Dynamic SQL guardrails: SELECT‑only on views (<code>pd.v_*</code>) with enforced LIMIT.</li>
         <li>LLM‑generated queries validated and executed with auditing.</li>
       </ul>
+      <p>
+        Dynamic queries are validated to be SELECT‑only and limited to read‑only views for safety.<br/>
+        The guardrails enforce an automatic LIMIT and block DDL/DML keywords.<br/>
+        Screenshots show the validation + execution flow with audit logging.
+      </p>
       <div class="grid grid-1">
         <a href="assets/llm_sql.png" target="_blank" rel="noopener"><img class="content-img" src="assets/llm_sql.png" alt="LLM + Safe SQL demo" /></a>
         <a href="assets/llm_question.png" target="_blank" rel="noopener"><img class="content-img" src="assets/llm_question.png" alt="LLM question execution proof" /></a>
@@ -140,8 +190,11 @@
     </section>
 
     
+
+    
   </main>
 
+  
   <footer class="site-footer">
     <div class="container">
       <p class="thanks">Thank you for the opportunity.</p>

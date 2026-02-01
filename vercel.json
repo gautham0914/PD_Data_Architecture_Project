@@ -1,0 +1,7 @@
+{
+  "rewrites": [
+    { "source": "/report/(.*)", "destination": "/report/$1" },
+    { "source": "/api/(.*)", "destination": "/api/$1" },
+    { "source": "/(.*)", "destination": "/web/$1" }
+  ]
+}
